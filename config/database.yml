@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: cursify
+  password: cursify@#!
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: cursify_test_development
+
+test:
+  <<: *default
+  database: cursify_test_test
+
+production:
+  <<: *default
+  database: cursify_test_production
+  username: cursify_test
+  password: <%= ENV['CURSIFY_TEST_DATABASE_PASSWORD'] %>
