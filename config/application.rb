@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module CursifyTest
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     config.i18n.default_locale = 'pt-BR'
     config.time_zone = 'Brasilia'
     # Settings in config/environments/* take precedence over those specified here.

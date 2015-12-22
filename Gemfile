@@ -14,6 +14,11 @@ gem 'jquery-rails'
 # PRODUCTIVITY
 gem 'simple_form', '3.2.0'
 gem 'start', '0.1.1'
+gem 'responders', '2.1.1'
 
 # AUTHENTICATION AND AUTHORIZATION
 gem 'devise', '3.5.3'
+
+group :development do
+  gem 'quiet_assets', '1.1.0'
+end
