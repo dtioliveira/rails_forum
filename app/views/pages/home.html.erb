@@ -8,7 +8,7 @@
             <div class="avatar-circle"></div>
           </div>
         </div><a href="#"><strong><%= current_user.name %></strong></a>
-        <!-- <div><strong data-new-link="true">ADMIN III</strong></div> -->
+        <%= is_admin current_user %>
         <div>Desde: <%= l current_user.created_at, format: :short %></div>
         <!-- <ul class="w-list-unstyled count-ul">
           <li class="count-list">
