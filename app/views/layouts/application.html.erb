@@ -2,23 +2,38 @@
 <html>
 <head>
   <title>CursifyTest</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Bree Serif:regular","Allerta:regular"]
+      }
+    });
+  </script>
 </head>
 <body>
+  <header>
+    <nav class="w-clearfix nav-purple">
+      <ul class="w-list-unstyled nav-ul">
+        <li class="nav-list"><b><%= link_to "Página Inicial", root_path, class: 'nav-link' %></b></li>
+        <% if current_user %>
+          <li class="nav-list"><b><%= link_to "Sair", destroy_user_session_path, method: :delete, class: 'nav-link' %></b></li>
+        <% else %>
+          <li class="nav-list"><b><%= link_to "Entrar", new_user_session_path, class: 'nav-link' %></b></li>
+        <% end %>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  <ul>
-    <% if current_user %>
-      <li><%= link_to "Editar", edit_user_registration_path %></li>
-      <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Entrar", new_user_session_path %></li>
-      <li><%= link_to "Cadastre-se", new_user_registration_path %></li>
-    <% end %>
-  </ul>
+  <%= yield %>
 
-<%= yield %>
+  <%= javascript_include_tag 'application' %>
 
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>

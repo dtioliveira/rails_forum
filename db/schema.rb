@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20151222191531) do
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.boolean  "is_admin",                           default: false
-    t.integer  "access_level",           limit: 4,   default: 0
+    t.string   "name",                   limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
