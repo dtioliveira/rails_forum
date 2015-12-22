@@ -5,5 +5,16 @@ Rails.application.routes.draw do
   }
 
   get :home, to: 'pages#home', as: :home
-  root 'pages#home'
+
+  authenticated :user do
+    devise_scope :user do
+      root to: "pages#home", as: "root"
+    end
+  end
+
+  unauthenticated do
+    devise_scope :user do
+      root to: "user/registrations#new", as: "unauthenticated"
+    end
+  end
 end
