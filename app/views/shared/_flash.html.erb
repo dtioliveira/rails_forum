@@ -1,0 +1,10 @@
+<!-- <div class="alert alert-success"><strong data-new-link="true">Well done!</strong>&nbsp;You successfully read this important alert message.</div>
+<div class="alert alert-info"><strong data-new-link="true">Well done!</strong>&nbsp;You successfully read this important alert message.</div>
+<div class="alert alert-warning"><strong data-new-link="true">Well done!</strong>&nbsp;You successfully read this important alert message.</div>
+<div class="alert alert-fail"><strong data-new-link="true">Well done!</strong>&nbsp;You successfully read this important alert message.</div> -->
+<% for key, msg in flash %>
+  <% flash_class = key.to_s == "notice" ? "success" : "fail" %>
+  <div class="alert alert-<%= flash_class %>">
+    <div style="text-align: center;"><%= msg %></div>
+  </div>
+<% end %>

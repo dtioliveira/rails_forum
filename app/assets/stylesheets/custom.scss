@@ -1,0 +1,204 @@
+body {
+  background-color: #fafafa;
+  font-family: 'Bree Serif', sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-list {
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-ul {
+  display: inline-block;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  float: right;
+  text-align: right;
+}
+
+.input-rounded {
+  border-radius: 5px;
+}
+
+.pull-right {
+  text-align: right;
+}
+
+.alert {
+  margin-bottom: 1.5rem;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert.alert-success {
+  border-color: #d0e9c6;
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.alert.alert-info {
+  border-color: #bcdff1;
+  background-color: #d9edf7;
+  color: #31708f;
+}
+
+.alert.alert-warning {
+  border-color: #faf2cc;
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+
+.alert.alert-fail {
+  border-color: #ebcccc;
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.nav-purple {
+  background-color: #563d7c;
+}
+
+.main {
+  padding: 20px;
+  background-color: white;
+  box-shadow: #c2c2c2 0px 0px 6px 0px;
+}
+
+.nav-link {
+  color: #cdbfe3;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.page-header {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebebeb;
+  color: #84922d;
+  text-transform: uppercase;
+}
+
+.avatar-box {
+  height: 150px;
+  margin-bottom: 10px;
+  background-image: image-url('images.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.avatar-circle {
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  right: 0px;
+  bottom: 0px;
+  width: 120px;
+  height: 120px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  background-image: image-url('12247144_985681451493689_3460159843447436262_n.jpg');
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.avatar-circle.sm {
+  position: static;
+  width: 90px;
+  height: 90px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.num-counter {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.count-list {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+}
+
+.count-ul {
+  text-align: center;
+}
+
+.add-friend {
+  text-align: center;
+}
+
+.unfriend-link {
+  float: right;
+  color: #5e5e5e;
+  font-size: 13px;
+}
+
+.ban-user {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.center {
+  text-align: center;
+}
+
+.btn-default {
+  background-color: #cacaca;
+}
+
+.post-title {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 38px;
+}
+
+.comment-box {
+  margin-bottom: 1rem;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.moderation-box {
+  font-size: 13px;
+  text-align: right;
+}
+
+.post-date {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 479px) {}

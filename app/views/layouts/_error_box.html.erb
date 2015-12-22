@@ -1,0 +1,13 @@
+<% if resource.errors.any? %>
+  <div class="alert alert-fail">
+    <div><strong>Atenção!<br>Alguns erros estão impedindo o avanço desse processo:<br></strong>
+    </div>
+    <ul class="w-list-unstyled">
+      <% resource.errors.full_messages.each do |msg| %>
+        <li>
+          <div>* <%= msg %></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
