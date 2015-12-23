@@ -1,6 +1,7 @@
 <div class="profile-side">
   <div class="avatar-box">
     <div class="avatar-circle"></div>
+    <%= display_admin_cert(@user) %>
   </div>
 </div><a href="#"><strong><%= @user.name %></strong></a>
 <%= is_admin @user %>
