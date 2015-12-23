@@ -158,9 +158,10 @@ a {
 }
 
 .unfriend-link {
-  float: right;
+  display: block;
   color: #5e5e5e;
   font-size: 13px;
+  text-align: right;
 }
 
 .ban-user {
@@ -246,6 +247,41 @@ a {
   background-position: 50% 50%;
   background-size: 30px;
   background-repeat: no-repeat;
+}
+
+.side-menu-link {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 20px 5px 40px;
+  background-color: #dbdbdb;
+  background-image: image-url('news.svg');
+  background-position: 10px 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
+}
+
+.side-menu-link:hover {
+  background-color: #f1f1f1;
+}
+
+.side-menu-link.news {
+  background-image: image-url('ytb.svg');
+  background-position: 10px 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.side-menu-link.users {
+  background-image: image-url('user.svg');
+  background-size: 20px;
+}
+
+.side-menu-text {
+  display: block;
+  color: #2e2e2e;
+  text-transform: uppercase;
 }
 
 @media (max-width: 991px) {
