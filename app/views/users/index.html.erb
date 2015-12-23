@@ -13,9 +13,11 @@
               <% users.each do |user| %>
                 <div class="w-col w-col-4 w-col-small-4">
                   <div class="user-li">
-                    <div class="avatar-circle sm"></div><a href="#" class="user-name"><strong data-new-link="true">Diego Oliveira</strong></a>
-                    <div>diegoitarare@gmail.com</div>
-                    <div class="center"><a href="#" class="w-button btn-danger btn-sm">Banir</a><a href="#" class="w-button btn-success btn-sm">Tornar admin</a>
+                    <div class="avatar-circle sm"></div>
+                    <b><%= link_to user.name, profile_path(user.id), class: 'user-name' %></b>
+                    <div><%= user.email %></div>
+                    <div class="center">
+                      <%= render 'users/shared/actions', user: user %>
                     </div>
                   </div>
                 </div>

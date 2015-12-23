@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_enumeration_for :status, with: UserStatus, create_helpers: { prefix: true }
+
   def friends
     Relationship.where('adder_id = :id OR added_id = :id', id: self.id).by_situation('accepted')
   end

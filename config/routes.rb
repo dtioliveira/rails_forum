@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   post '/add_friend', to: 'relationships#create', as: :create_relationship
   post '/remove_friend', to: 'relationships#destroy', as: :destroy_relationship
+
+  post '/ban', to: 'users#ban', as: :ban_user
   get 'profile/:user_id', to: 'pages#profile', as: :profile
 
   get 'home', to: 'pages#home', as: :home
