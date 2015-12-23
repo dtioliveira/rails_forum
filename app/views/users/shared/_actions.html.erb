@@ -1,5 +1,0 @@
-<div class="admin-actions">
-  <%= link_to "Banir", ban_user_path(user_id: user.id), method: :post, remote: true, class: 'w-button btn-danger btn-sm' if !user.status_banned? %>
-  <%= link_to "Ativar", ban_user_path(user_id: user.id), method: :post, remote: true, class: 'w-button btn-success btn-sm' if user.status_banned? %>
-  <a href="#" class="w-button btn-success btn-sm">Tornar admin</a>
-</div>

@@ -8,22 +8,7 @@
 
       <div class="w-col w-col-9">
         <div>
-          <% @users.each_slice(3) do |users| %>
-            <div class="w-row">
-              <% users.each do |user| %>
-                <div class="w-col w-col-4 w-col-small-4">
-                  <div class="user-li">
-                    <div class="avatar-circle sm"></div>
-                    <b><%= link_to user.name, profile_path(user.id), class: 'user-name' %></b>
-                    <div><%= user.email %></div>
-                    <div class="center">
-                      <%= render 'users/shared/actions', user: user %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+          <%= render 'users_list' %>
         </div>
       </div>
     </div>
