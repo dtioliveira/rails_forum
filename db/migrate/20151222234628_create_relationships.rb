@@ -3,7 +3,7 @@ class CreateRelationships < ActiveRecord::Migration
     create_table :relationships do |t|
       t.integer :adder_id
       t.integer :added_id
-      t.string :situation
+      t.string :situation, default: 'pending'
 
       t.timestamps null: false
     end

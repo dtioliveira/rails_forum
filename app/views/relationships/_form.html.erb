@@ -1,5 +1,5 @@
 <div class="relationship-situation">
-  <% if !@user.has_relationship?(current_user) %>
+  <% unless @relationship %>
     <div class="center">
       <%= simple_form_for :relationship, url: create_relationship_path, method: :post, remote: true do |f| %>
         <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
@@ -11,12 +11,18 @@
       <!-- <%# link_to "Banir usuário", "#", class: 'w-button ban-user' %> -->
     </div>
   <% else %>
-    <%= simple_form_for :relationship, url: destroy_relationship_path, method: :post, remote: true do |f| %>
-      <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
-      <%= f.submit "Desfazer amizade",
-      class: 'unfriend-link',
-      data: { disable_with: 'Enviando...' },
-      style: 'margin-top: 10px;' %>
+    <% unless @relationship.situation_pending? %>
+      <%= simple_form_for :relationship, url: destroy_relationship_path, method: :post, remote: true do |f| %>
+        <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
+        <%= f.submit "Desfazer amizade",
+        class: 'unfriend-link',
+        data: { disable_with: 'Enviando...' },
+        style: 'margin-top: 10px;' %>
+      <% end %>
+    <% else %>
+      <div class="center">
+        <%= link_to "Aguardando aceitação...", "#", class: 'w-button add-friend' %>
+      </div>
     <% end %>
   <% end %>
 </div>

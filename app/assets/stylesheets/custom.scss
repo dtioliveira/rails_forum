@@ -129,6 +129,7 @@ a {
 
 .avatar-circle.sm {
   position: static;
+  display: inline-block;
   width: 90px;
   height: 90px;
   margin-right: 0px;
@@ -152,6 +153,7 @@ a {
 }
 
 .add-friend {
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -167,11 +169,9 @@ a {
 }
 
 .center {
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
-}
-
-.btn-default {
-  background-color: #cacaca;
 }
 
 .post-title {
@@ -197,7 +197,63 @@ a {
   border-bottom: 1px solid #e6e6e6;
 }
 
-@media (max-width: 991px) {}
+.users-ul {
+  text-align: center;
+}
+
+.user-li {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-left: auto;
+  text-align: center;
+}
+
+.user-name {
+  display: block;
+}
+
+.btn-danger {
+  border: 1px solid #ac2925;
+  background-color: #c9302c;
+}
+
+.btn-danger.btn-sm {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 13px;
+}
+
+.btn-success {
+  border: 1px solid #4cae4c;
+  background-color: #5cb85c;
+}
+
+.btn-success.btn-sm {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 13px;
+}
+
+.admin-cert {
+  position: relative;
+  left: 5px;
+  top: 5px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: image-url('sport17.png');
+  background-position: 50% 50%;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 991px) {
+  .btn-danger.btn-sm {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
 
 @media (max-width: 767px) {}
 
