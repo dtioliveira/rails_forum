@@ -1,0 +1,11 @@
+<div class="profile-side">
+  <div class="avatar-box">
+    <div class="avatar-circle"></div>
+  </div>
+</div><a href="#"><strong><%= @user.name %></strong></a>
+<%= is_admin @user %>
+<div>Desde: <%= l @user.created_at, format: :short %></div>
+
+<%= render 'shared/user_counters' %>
+
+<%= render 'relationships/form' if @user != current_user %>

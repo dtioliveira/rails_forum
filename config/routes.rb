@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'user/registrations',
-    sessions: 'user/sessions'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
-
-  get :home, to: 'pages#home', as: :home
 
   authenticated :user do
     devise_scope :user do
@@ -14,7 +12,17 @@ Rails.application.routes.draw do
 
   unauthenticated do
     devise_scope :user do
-      root to: "user/registrations#new", as: "unauthenticated"
+      root to: "users/registrations#new", as: "unauthenticated"
     end
   end
+
+  get '/users', to: 'users#index', as: :users
+
+  post '/add_friend', to: 'relationships#create', as: :create_relationship
+  post '/remove_friend', to: 'relationships#destroy', as: :destroy_relationship
+
+  post '/ban', to: 'users#ban', as: :ban_user
+  get 'profile/:user_id', to: 'pages#profile', as: :profile
+
+  get 'home', to: 'pages#home', as: :home
 end

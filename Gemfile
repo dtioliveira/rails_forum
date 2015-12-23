@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'simple_form', '3.2.0'
 gem 'start', '0.1.1'
 gem 'responders', '2.1.1'
+gem 'enumerate_it', '1.2'
 
 # AUTHENTICATION AND AUTHORIZATION
 gem 'devise', '3.5.3'
