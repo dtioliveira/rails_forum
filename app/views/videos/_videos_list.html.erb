@@ -1,0 +1,20 @@
+<div class="videos-list">
+  <% @videos.each_slice(3) do |videos| %>
+    <div class="w-row">
+      <% videos.each do |video| %>
+        <div class="w-col w-col-4 w-col-small-4">
+          <div class="user-li">
+            <div class="avatar-circle sm" style="background-image: url('http://img.youtube.com/vi/<%= video.parse_url %>/0.jpg')"></div>
+            <b><%= link_to video.title, edit_video_path(video), class: 'user-name' %></b>
+            <div class="center">
+              <%= link_to "Excluir", video_path(video),
+                  method: :delete, class: 'w-button btn-danger btn-sm',
+                  style: 'width: 100px;',
+                  data: { disable_with: 'Aguarde...' }%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="w-form">
+  <%= simple_form_for @video do |f| %>
+
+    <%= render 'layouts/error_box', resource: @video %>
+
+    <%= f.input :title, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :url, placeholder: 'URL do vídeo', input_html: { class: 'w-input input-rounded' } %>
+
+    <div class="pull-right">
+      <%= f.submit "Entrar", class: 'w-button', data: { disable_with: 'Salvando...' } %>
+    </div>
+  <% end %>
+</div>

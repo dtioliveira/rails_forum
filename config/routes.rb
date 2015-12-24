@@ -16,13 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :videos
+
   get '/users', to: 'users#index', as: :users
+  get 'profile/:user_id', to: 'pages#profile', as: :profile
+  get 'home', to: 'pages#home', as: :home
 
   post '/add_friend', to: 'relationships#create', as: :create_relationship
   post '/remove_friend', to: 'relationships#destroy', as: :destroy_relationship
-
   post '/ban', to: 'users#ban', as: :ban_user
-  get 'profile/:user_id', to: 'pages#profile', as: :profile
-
-  get 'home', to: 'pages#home', as: :home
 end
