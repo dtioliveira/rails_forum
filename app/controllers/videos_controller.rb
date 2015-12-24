@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user
   before_action :set_video, except: [:new, :create, :index]
 
@@ -23,7 +24,7 @@ class VideosController < ApplicationController
   end
 
   def update
-    @video.update(videos_params)
+    @video.update(video_params)
     respond_with @video, location: -> { videos_url }
   end
 

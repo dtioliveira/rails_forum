@@ -6,7 +6,6 @@
           <div class="user-li">
             <div class="avatar-circle sm" style="background-image: url('http://img.youtube.com/vi/<%= video.parse_url %>/0.jpg')"></div>
             <b><%= link_to video.title, edit_video_path(video), class: 'user-name' %></b>
-            <div><%= video.url %></div>
             <div class="center">
               <%= link_to "Excluir", video_path(video),
                   method: :delete, class: 'w-button btn-danger btn-sm',

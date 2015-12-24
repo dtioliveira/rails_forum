@@ -1,0 +1,36 @@
+<section>
+  <div class="w-container main">
+    <h1 class="page-header">Área do admin</h1>
+    <div class="w-row">
+      <div class="w-col w-col-3 w-clearfix">
+        <%= render 'shared/user_card' %>
+        <ul class="w-list-unstyled">
+          <li class="side-menu-link users">
+            <%= link_to users_path, class: 'w-inline-block menu-list' do %>
+              <div class="side-menu-text"><strong>usuários</strong></div>
+            <% end %>
+          </li>
+          <li class="side-menu-link">
+            <%= link_to videos_path, class: 'w-inline-block menu-list' do %>
+              <div class="side-menu-text"><strong>Vídeos</strong>
+              </div>
+            <% end %>
+          </li>
+          <li class="side-menu-link news">
+            <%= link_to users_path, class: 'w-inline-block menu-list' do %>
+              <div class="side-menu-text"><strong>notícias</strong>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-col w-col-9">
+        <div class="pull-right" style="margin-bottom: 20px;">
+          <%= link_to "<< Voltar", :back %>
+        </div>
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</section>
