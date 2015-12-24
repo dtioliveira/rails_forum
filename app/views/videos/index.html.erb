@@ -26,11 +26,14 @@
       </div>
 
       <div class="w-col w-col-9">
-        <% if @users.any? %>
-          <%= render 'users_list' %>
+        <div class="pull-right" style="margin-bottom: 20px;">
+          <%= link_to "Novo vídeo", new_video_path, class: 'w-button' %>
+        </div>
+        <% if @videos.any? %>
+          <%= render 'videos_list' %>
         <% else %>
           <div class="alert alert-info">
-            <strong>Usuários: </strong>Não há usuários para moderar no momento.</div>
+            <strong>Videos: </strong>Não há videos no momento.</div>
         <% end %>
       </div>
     </div>

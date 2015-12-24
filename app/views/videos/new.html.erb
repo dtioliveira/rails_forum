@@ -26,12 +26,10 @@
       </div>
 
       <div class="w-col w-col-9">
-        <% if @users.any? %>
-          <%= render 'users_list' %>
-        <% else %>
-          <div class="alert alert-info">
-            <strong>Usuários: </strong>Não há usuários para moderar no momento.</div>
-        <% end %>
+        <div class="pull-right" style="margin-bottom: 20px;">
+          <%= link_to "<< Voltar", :back %>
+        </div>
+        <%= render 'form' %>
       </div>
     </div>
   </div>
