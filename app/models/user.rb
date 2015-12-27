@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_enumeration_for :status, with: UserStatus, create_helpers: { prefix: true }
 
   has_many :videos, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   def friends
     Relationship.where('adder_id = :id OR added_id = :id', id: self.id).by_situation('accepted')

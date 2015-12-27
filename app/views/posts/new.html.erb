@@ -17,7 +17,7 @@
             <% end %>
           </li>
           <li class="side-menu-link news">
-            <%= link_to posts_path, class: 'w-inline-block menu-list' do %>
+            <%= link_to users_path, class: 'w-inline-block menu-list' do %>
               <div class="side-menu-text"><strong>notícias</strong>
               </div>
             <% end %>
@@ -27,14 +27,9 @@
 
       <div class="w-col w-col-9">
         <div class="pull-right" style="margin-bottom: 20px;">
-          <%= link_to "Novo vídeo", new_video_path, class: 'w-button' %>
+          <%= link_to "<< Voltar", :back %>
         </div>
-        <% if @videos.any? %>
-          <%= render 'videos_list' %>
-        <% else %>
-          <div class="alert alert-info">
-            <strong>Videos: </strong>Não há videos no momento.</div>
-        <% end %>
+        <%= render 'form' %>
       </div>
     </div>
   </div>

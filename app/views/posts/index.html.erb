@@ -27,13 +27,13 @@
 
       <div class="w-col w-col-9">
         <div class="pull-right" style="margin-bottom: 20px;">
-          <%= link_to "Novo vídeo", new_video_path, class: 'w-button' %>
+          <%= link_to "Nova notícia", new_post_path, class: 'w-button' %>
         </div>
-        <% if @videos.any? %>
-          <%= render 'videos_list' %>
+        <% if @posts.any? %>
+          <%= render 'posts_list' %>
         <% else %>
           <div class="alert alert-info">
-            <strong>Videos: </strong>Não há videos no momento.</div>
+            <strong>Notícia: </strong>Não há notícias no momento.</div>
         <% end %>
       </div>
     </div>

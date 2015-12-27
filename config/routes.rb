@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :videos
+  resources :posts
 
   get '/users', to: 'users#index', as: :users
   get 'profile/:user_id', to: 'pages#profile', as: :profile

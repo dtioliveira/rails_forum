@@ -1,0 +1,14 @@
+<div class="w-form">
+  <%= simple_form_for @post do |f| %>
+
+    <%= render 'layouts/error_box', resource: @post %>
+
+    <%= f.input :title, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+
+    <%= f.input :text, placeholder: 'Conteúdo da notícia', input_html: { class: 'w-input input-rounded' } %>
+
+    <div class="pull-right">
+      <%= f.button :submit, class: 'w-button', data: { disable_with: 'Salvando...' } %>
+    </div>
+  <% end %>
+</div>
