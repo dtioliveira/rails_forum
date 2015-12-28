@@ -5,10 +5,20 @@
 
     <%= f.input :title, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
 
-    <%= f.input :text, placeholder: 'Conteúdo da notícia', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :text, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
     <div class="pull-right">
-      <%= f.button :submit, class: 'w-button', data: { disable_with: 'Salvando...' } %>
+      <%= f.button :submit, class: 'w-button', style: 'margin-top: 20px;', data: { disable_with: 'Salvando...' } %>
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  tinyMCE.init({
+    selector: 'textarea.tinymce',
+    menubar: false,
+    language: 'pt_BR',
+    statusbar: false,
+    content_style: "p {font-family: 'Bree Serif', sans-serif; font-size: 14px}"
+  });
+</script>
