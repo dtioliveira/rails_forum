@@ -3,3 +3,4 @@
 //= require modernizr
 //= require base
 //= require tinymce
+//= require jquery.tagsinput
