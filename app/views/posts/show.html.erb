@@ -1,0 +1,47 @@
+<section>
+  <div class="w-container main">
+    <h1 class="page-header">Seja bem vindo <%= current_user.name %></h1>
+    <div class="w-row">
+      <div class="w-col w-col-3 w-clearfix">
+        <%= render 'shared/user_card', user: current_user %>
+      </div>
+
+      <div class="w-col w-col-9">
+
+        <div class="w-form">
+          <form>
+            <h1 class="post-title"><%= @post.user.name %></h1>
+            <div class="w-richtext">
+              <%= simple_format(@post.text) %>
+            </div>
+
+            <h4>Comentários</h4>
+            <textarea id="field" placeholder="Example Text" name="field" class="w-input"></textarea>
+            <div class="pull-right">
+              <input type="submit" value="Enviar" data-wait="Please wait..." class="w-button btn-default">
+            </div>
+          </form>
+        </div>
+
+        <% @post.comments.each do |comment| %>
+          <div class="comment-box">
+            <div class="w-row">
+              <div class="w-col w-col-2">
+                <div>
+                  <div class="avatar-circle sm"></div>
+                </div>
+              </div>
+              <div class="w-col w-col-10">
+                <div><strong data-new-link="true"><%= comment.user.name %></strong>
+                </div>
+                <div><%= comment.text %></div>
+              </div>
+            </div>
+            <div class="moderation-box"><a href="#">Excluir esse comentário</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

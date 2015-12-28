@@ -7,8 +7,11 @@
       </div>
 
       <div class="w-col w-col-9">
-        <!-- <a href="#" class="post-title"><strong data-new-link="true">Título do link</strong></a>
-        <div class="post-date">De: Diego Oliveira - 10/12/2015 - 08:22</div>
+        <% @posts.each do |post| %>
+          <b><%= link_to post.title, post_path(post), class: 'post-title' %></b>
+          <div class="post-date">De: <%= post.user.name %> - <%= post.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
+        <% end %>
+      <!--
         <div class="w-form">
           <form>
             <h1 class="post-title">Título do vídeo</h1>
