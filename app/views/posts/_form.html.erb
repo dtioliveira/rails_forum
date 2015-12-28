@@ -7,12 +7,12 @@
 
     <%= f.input :text, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
-    <%= f.simple_fields_for :tags do |f| %>
-      <%= f.input :name, input_html: { id: 'tags', class: 'w-input input-rounded' } %>
-    <% end %>
+    <hr>
 
-    <div class="pull-right">
-      <%= f.button :submit, class: 'w-button', style: 'margin-top: 20px;', data: { disable_with: 'Salvando...' } %>
+    <%= f.input :tags, input_html: { id: 'tags', style: 'margin-top: 15px;', class: 'w-input input-rounded' } %>
+
+    <div class="pull-right" style='margin-top: 20px;'>
+      <%= f.button :submit, class: 'w-button', data: { disable_with: 'Salvando...' } %>
     </div>
   <% end %>
 </div>
