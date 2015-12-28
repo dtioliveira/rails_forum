@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     Relationship.where('adder_id = :user_id AND added_id = :id OR adder_id = :id AND added_id = :user_id',
     id: self.id, user_id: user.id)
   end
+
+  def active_for_authentication?
+    super && self.status_active?
+  end
 end
