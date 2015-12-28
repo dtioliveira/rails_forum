@@ -1,0 +1,20 @@
+<div class="posts-list">
+  <% @posts.each_slice(3) do |posts| %>
+    <div class="w-row">
+      <% posts.each do |post| %>
+        <div class="w-col w-col-4 w-col-small-4">
+          <div class="user-li">
+            <div class="avatar-circle sm"></div>
+            <b><%= link_to post.title, edit_post_path(post), class: 'user-name' %></b>
+            <div class="center">
+              <%= link_to "Excluir", post_path(post),
+                  method: :delete, class: 'w-button btn-danger btn-sm',
+                  style: 'width: 100px;',
+                  data: { disable_with: 'Aguarde...' }%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

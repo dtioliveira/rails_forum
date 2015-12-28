@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151224185403) do
+ActiveRecord::Schema.define(version: 20151224193850) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "text",       limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "adder_id",   limit: 4
@@ -22,21 +32,21 @@ ActiveRecord::Schema.define(version: 20151224185403) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
+    t.string   "email",                  limit: 255, default: "",       null: false
+    t.string   "encrypted_password",     limit: 255, default: "",       null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,     null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,        null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
     t.boolean  "is_admin",                           default: false
     t.string   "name",                   limit: 255
-    t.string   "status",                 limit: 255
+    t.string   "status",                 limit: 255, default: "active"
     t.string   "avatar",                 limit: 255
   end
 
@@ -53,5 +63,6 @@ ActiveRecord::Schema.define(version: 20151224185403) do
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
 
+  add_foreign_key "posts", "users"
   add_foreign_key "videos", "users"
 end
