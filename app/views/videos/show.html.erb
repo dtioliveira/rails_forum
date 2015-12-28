@@ -9,16 +9,16 @@
       <div class="w-col w-col-9">
 
         <div class="w-form">
-          <h1 class="post-title"><%= @post.title %></h1>
-          <div class="w-richtext">
-            <%= simple_format(@post.text) %>
+          <h1 class="post-title"><%= @video.title %></h1>
+          <div style="padding-top: 56.17021276595745%;" class="w-embed w-video">
+            <iframe class="embedly-embed" src="http://www.youtube.com/embed/<%= @video.parse_url %>?autoplay=1" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
           </div>
 
           <%= render 'comments/form' %>
         </div>
 
         <div id="comments">
-          <% @post.comments.each do |comment| %>
+          <% @video.comments.each do |comment| %>
             <%= render 'comments/comment', comment: comment %>
           <% end %>
         </div>

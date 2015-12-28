@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :videos
   resources :posts
+  resources :comments
 
   get '/users', to: 'users#index', as: :users
   get 'profile/:user_id', to: 'pages#profile', as: :profile

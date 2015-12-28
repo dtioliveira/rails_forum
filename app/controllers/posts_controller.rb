@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @user = current_user
-    @posts = current_user.posts
+    @posts = current_user.posts.order(created_at: :desc)
   end
 
   def new
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = current_user.comments.new
   end
 
   def edit

@@ -1,5 +1,6 @@
 class Video < ActiveRecord::Base
   belongs_to :user
+  has_many :comments, as: :commentable, dependent: :destroy
 
   validates :url, :title, presence: true
   validates :url, format: { with: /^(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([\w-]{10,})/, multiline: true }

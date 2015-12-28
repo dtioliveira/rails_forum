@@ -18,6 +18,7 @@ class VideosController < ApplicationController
   end
 
   def show
+    @comment = current_user.comments.new
   end
 
   def edit

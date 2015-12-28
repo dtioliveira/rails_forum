@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :videos, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :nullify
 
   def friends
     Relationship.where('adder_id = :id OR added_id = :id', id: self.id).by_situation('accepted')
