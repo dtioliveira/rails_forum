@@ -7,8 +7,12 @@
 
     <%= f.input :text, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
-    <div class="pull-right">
-      <%= f.button :submit, class: 'w-button', style: 'margin-top: 20px;', data: { disable_with: 'Salvando...' } %>
+    <hr>
+
+    <%= f.input :tags, input_html: { id: 'tags', style: 'margin-top: 15px;', class: 'w-input input-rounded' } %>
+
+    <div class="pull-right" style='margin-top: 20px;'>
+      <%= f.button :submit, class: 'w-button', data: { disable_with: 'Salvando...' } %>
     </div>
   <% end %>
 </div>
@@ -22,3 +26,18 @@
     content_style: "p {font-family: 'Bree Serif', sans-serif; font-size: 14px}"
   });
 </script>
+
+<%= content_for :bottom_js do %>
+  <script type="text/javascript">
+    $('#tags').tagsInput({
+      'height':'100px',
+      'width':'100%',
+      'interactive':true,
+      'defaultText':'',
+      'delimiter': [',',';'],   // Or a string with a single delimiter. Ex: ';'
+      'removeWithBackspace' : true,
+      'minChars' : 3,
+      'placeholderColor' : '#666666'
+    });
+  </script>
+<% end %>
