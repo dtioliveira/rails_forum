@@ -6,7 +6,7 @@ gem 'rails', '4.2.4'
 gem 'puma'
 
 # DATABASE
-gem 'pg', group: :development
+gem 'pg', group: :production
 gem 'mysql2', '~> 0.3.20', group: :development
 
 # FRONT-END
