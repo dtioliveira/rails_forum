@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '2.2.3'
 gem 'rails', '4.2.4'
 
+gem 'puma'
+
 # DATABASE
 gem 'mysql2', '~> 0.3.20'
 
@@ -26,3 +28,5 @@ gem 'devise', '3.5.3'
 group :development do
   gem 'quiet_assets', '1.1.0'
 end
+
+gem 'rails_12factor', group: :production

@@ -177,8 +177,8 @@ a {
 
 .post-title {
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 38px;
 }
 
@@ -249,6 +249,10 @@ a {
   background-repeat: no-repeat;
 }
 
+.menu-list.active {
+  color: #333;
+}
+
 .side-menu-link {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -280,7 +284,6 @@ a {
 
 .side-menu-text {
   display: block;
-  color: #2e2e2e;
   text-transform: uppercase;
 }
 
