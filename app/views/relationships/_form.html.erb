@@ -22,6 +22,8 @@
     <% else %>
       <div class="center">
         <%= link_to "Aguardando aceitação...", "#", class: 'w-button add-friend' %>
+        <%= link_to "Cancelar pedido", destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
+            data: { disable_with: 'Cancelando...' }%>
       </div>
     <% end %>
   <% end %>

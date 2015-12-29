@@ -8,7 +8,7 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:relationship][:user_id])
+    @user = User.find(params[:user_id] || params[:relationship][:user_id])
     Relationship.where(adder_id: current_user.id, added_id: @user.id).destroy_all
     @relationship = @user.has_relationship?(current_user).first
   end

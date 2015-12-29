@@ -9,6 +9,13 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:user_id])
+    @posts = @user.posts
     @relationship = @user.has_relationship?(current_user).first
+  end
+
+  def videos
+  end
+
+  def posts
   end
 end

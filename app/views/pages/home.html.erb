@@ -7,9 +7,15 @@
       </div>
 
       <div class="w-col w-col-9">
+        <form>
+          <input id="name-3" type="text" placeholder="Digite seu e-mail" name="name-3" data-name="Name 3" class="w-input input-rounded">
+          <div class="pull-right">
+            <input type="submit" value="Buscar" data-wait="Please wait..." class="w-button">
+          </div>
+        </form>
+
         <% @posts.each do |post| %>
-          <b><%= link_to post.title, post_path(post), class: 'post-title' %></b>
-          <div class="post-date">De: <%= post.user.name %> - <%= post.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
+          <%= render 'posts/post', post: post %>
         <% end %>
       </div>
     </div>

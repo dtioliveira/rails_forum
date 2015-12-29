@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   resources :comments
 
   get '/users', to: 'users#index', as: :users
-  get 'profile/:user_id', to: 'pages#profile', as: :profile
-  get 'home', to: 'pages#home', as: :home
+  get '/profile/:user_id', to: 'pages#profile', as: :profile
+  get '/home', to: 'pages#home', as: :home
+  get '/videos', to: 'pages#videos', as: :all_videos
+  get '/posts', to: 'pages#posts', as: :all_posts
 
   post '/add_friend', to: 'relationships#create', as: :create_relationship
   post '/remove_friend', to: 'relationships#destroy', as: :destroy_relationship

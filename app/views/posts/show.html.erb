@@ -10,6 +10,7 @@
 
         <div class="w-form">
           <h1 class="post-title"><%= @post.title %></h1>
+          <div class="post-date">De: <%= link_to @post.user.name, profile_path(@post.user) %>- <%= @post.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
           <div class="w-richtext">
             <%= simple_format(@post.text) %>
           </div>

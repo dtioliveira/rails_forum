@@ -19,7 +19,7 @@
                   data: { disable_with: 'Aguarde...' } if user.status_banned? %>
               <%= link_to "Tornar Admin", became_admin_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-success btn-sm',
-                  data: { disable_with: 'Aguarde...' } if !user.is_admin %>
+                  data: { disable_with: 'Aguarde...' } if !user.is_admin && user.status_active? %>
               <%= link_to "Revogar permissão", became_admin_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-success btn-sm',
                   data: { disable_with: 'Aguarde...' } if user.is_admin %>
