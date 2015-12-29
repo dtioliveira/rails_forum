@@ -1,0 +1,30 @@
+<section>
+  <div class="w-container main">
+    <h1 class="page-header">Seja bem vindo <%= current_user.name %></h1>
+    <div class="w-row">
+      <div class="w-col w-col-3 w-clearfix">
+        <%= render 'shared/user_card', user: current_user %>
+      </div>
+
+      <div class="w-col w-col-9">
+
+        <div class="w-form">
+          <h1 class="post-title"><%= @post.title %></h1>
+          <div class="w-richtext">
+            <%= simple_format(@post.text) %>
+          </div>
+
+          <%= rating_for @post, "like", star: 5, enable_half: true, disable_after_rate: true, cancel: true %>
+
+          <%= render 'comments/form' %>
+        </div>
+
+        <div id="comments">
+          <% @post.comments.each do |comment| %>
+            <%= render 'comments/comment', comment: comment %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

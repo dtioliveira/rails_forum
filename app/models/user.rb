@@ -4,10 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  ratyrate_rater
+
   has_enumeration_for :status, with: UserStatus, create_helpers: { prefix: true }
 
   has_many :videos, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :nullify
 
   def friends
     Relationship.where('adder_id = :id OR added_id = :id', id: self.id).by_situation('accepted')

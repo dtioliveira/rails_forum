@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @posts = Post.all
+    @videos = Video.all
   end
 
   def profile

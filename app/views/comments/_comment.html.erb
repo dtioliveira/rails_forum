@@ -1,0 +1,17 @@
+<div class="comment-box" id="comment_<%= comment.id %>">
+  <div class="w-row">
+    <div class="w-col w-col-2">
+      <div>
+        <div class="avatar-circle sm"></div>
+      </div>
+    </div>
+    <div class="w-col w-col-10">
+      <div><strong data-new-link="true"><%= comment.user.name %></strong>
+      </div>
+      <div><%= comment.text %></div>
+    </div>
+  </div>
+  <div class="moderation-box">
+    <%= link_to "Excluir esse comentário", comment_path(comment), method: :delete, remote: true if current_user.is_admin %>
+  </div>
+</div>
