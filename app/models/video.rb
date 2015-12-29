@@ -1,4 +1,7 @@
 class Video < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   ratyrate_rateable "like"
 
   belongs_to :user

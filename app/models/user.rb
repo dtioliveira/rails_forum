@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   ratyrate_rater
 
   has_enumeration_for :status, with: UserStatus, create_helpers: { prefix: true }

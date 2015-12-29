@@ -7,9 +7,13 @@
       </div>
 
       <div class="w-col w-col-9">
-        <% @posts.each do |post| %>
-          <%= render 'posts/post', post: post %>
-      <% end %>
+        <% if @posts.any? %>
+          <% @posts.each do |post| %>
+            <%= render 'posts/post', post: post %>
+          <% end %>
+        <% else %>
+          <div class="alert alert-info"><strong>Notícias: </strong>Não há notícias no momento.</div>
+        <% end %>
       </div>
     </div>
   </div>
