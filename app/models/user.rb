@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  ratyrate_rater
+
   has_enumeration_for :status, with: UserStatus, create_helpers: { prefix: true }
 
   has_many :videos, dependent: :destroy

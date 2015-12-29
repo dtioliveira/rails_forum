@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+  ratyrate_rateable "like"
+  
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
 
