@@ -3,7 +3,7 @@
 <% resource = @post.present? ? @post : @video %>
 
 <%= simple_form_for @comment, remote: true do |f| %>
-  <%= f.input :text, placeholder: "Digite aqui...", input_html: { class: 'w-input' } %>
+  <%= f.input :text, label: false, placeholder: "Digite aqui...", input_html: { class: 'w-input' } %>
   <%= f.input :commentable_id, as: :hidden, input_html: { value: resource.id } %>
   <%= f.input :commentable_type, as: :hidden, input_html: { value: resource.class.name } %>
   <div class="pull-right">

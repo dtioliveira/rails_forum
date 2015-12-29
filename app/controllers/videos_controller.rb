@@ -19,6 +19,7 @@ class VideosController < ApplicationController
 
   def show
     @comment = current_user.comments.new
+    @comments = @video.comments.order(created_at: :desc)
   end
 
   def edit

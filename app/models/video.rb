@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
   ratyrate_rateable "like"
-  
+
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
 
@@ -10,5 +10,9 @@ class Video < ActiveRecord::Base
   def parse_url
      regex = /(?:.be\/|\/watch\?v=|\/(?=p\/))([\w\/\-]+)/
      url.match(regex)[1]
+  end
+
+  def tag_list
+    tags.gsub(";","").split(",").reject{|t| t.blank?}
   end
 end

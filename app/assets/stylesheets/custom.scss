@@ -287,6 +287,27 @@ a {
   text-transform: uppercase;
 }
 
+.rating-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  background-color: whitesmoke;
+}
+
+.tags {
+  margin-top: 20px;
+}
+
+.tag-name {
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 5px 8px;
+  background-color: #563d7c;
+  color: white;
+}
+
 @media (max-width: 991px) {
   .btn-danger.btn-sm {
     display: inline-block;

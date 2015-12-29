@@ -5,4 +5,8 @@ class Post < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :title, :tags, :text, presence: true
+
+  def tag_list
+    tags.gsub(";","").split(",").reject{|t| t.blank?}
+  end
 end
