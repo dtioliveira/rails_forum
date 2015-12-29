@@ -7,16 +7,22 @@
             <div class="avatar-circle sm"></div>
             <b><%= link_to user.name, profile_path(user.id), class: 'user-name' %></b>
             <div><%= user.email %></div>
+            <div>Admin: <%= user.is_admin ? "Sim" : "Não" %></div>
             <div class="center">
               <%= link_to "Banir", ban_user_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-danger btn-sm',
                   style: 'width: 100px;',
-                  data: { disable_with: 'Aguarde...' } if !user.status_banned? %>
+                  data: { disable_with: 'Aguarde...' } if !user.status_banned? && !user.is_admin %>
               <%= link_to "Ativar", ban_user_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-success btn-sm',
                   style: 'width: 100px;',
                   data: { disable_with: 'Aguarde...' } if user.status_banned? %>
-              <a href="#" class="w-button btn-success btn-sm">Tornar admin</a>
+              <%= link_to "Tornar Admin", became_admin_path(user_id: user.id),
+                  method: :post, remote: true, class: 'w-button btn-success btn-sm',
+                  data: { disable_with: 'Aguarde...' } if !user.is_admin %>
+              <%= link_to "Revogar permissão", became_admin_path(user_id: user.id),
+                  method: :post, remote: true, class: 'w-button btn-success btn-sm',
+                  data: { disable_with: 'Aguarde...' } if user.is_admin %>
             </div>
           </div>
         </div>

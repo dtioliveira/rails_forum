@@ -12,4 +12,11 @@ class UsersController < ApplicationController
     @user.save
     @users = User.all.reject{ |u| u == current_user }
   end
+
+  def became_admin
+    @user = User.find(params[:user_id])
+    @user.is_admin = @user.is_admin ? false : true
+    @user.save
+    @users = User.all.reject{ |u| u == current_user }
+  end
 end
