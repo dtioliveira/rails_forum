@@ -4,7 +4,7 @@
       <% users.each do |user| %>
         <div class="w-col w-col-4 w-col-small-4">
           <div class="user-li">
-            <div class="avatar-circle sm"></div>
+            <div class="avatar-circle sm" style="background-image: url(<%= user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)"></div>
             <b><%= link_to user.name, profile_path(user.id), class: 'user-name' %></b>
             <div><%= user.email %></div>
             <div>Admin: <%= user.is_admin ? "Sim" : "Não" %></div>
