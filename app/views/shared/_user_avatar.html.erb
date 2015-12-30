@@ -1,0 +1,12 @@
+<div class="user-avatar">
+  <div class="avatar-box">
+    <%= form_tag change_photo_path, method: :post, remote: true, multipart: true, id: 'change_photo_form' do %>
+      <%= file_field_tag :avatar, accept: 'image/png ,image/jpeg, image/jpg', style: 'display: none;', id: 'uploadAvatar' %>
+    <% end %>
+
+    <div class="avatar-circle" style="background-image: url(<%= @user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)"></div>
+
+    <%= display_admin_cert(@user) %>
+  </div>
+  <%= link_to "trocar avatar", "#", id: 'changeAvatar' if @user == current_user %>
+</div>

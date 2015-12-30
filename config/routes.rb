@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   post '/remove_friend', to: 'relationships#destroy', as: :destroy_relationship
   post '/ban', to: 'users#ban', as: :ban_user
   post '/became_admin', to: 'users#became_admin', as: :became_admin
+
+  post '/change_photo', to: 'users#change_photo', as: :change_photo
 end

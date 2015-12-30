@@ -19,4 +19,13 @@ class UsersController < ApplicationController
     @user.save
     @users = User.all.reject{ |u| u == current_user }
   end
+
+  def change_photo
+    @user = current_user
+    @user.update(avatar: params[:avatar])
+    respond_to do |format|
+      format.js
+      format.html { redirect_to :back }
+    end
+  end
 end

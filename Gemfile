@@ -24,6 +24,12 @@ gem 'enumerate_it', '1.2'
 gem 'ratyrate'
 gem 'friendly_id', '5.1.0'
 
+# UPLOAD
+gem 'carrierwave', '0.10.0'
+gem 'fog', '1.34'
+gem 'net-ssh', '~> 3.0', '>= 3.0.1'
+gem 'mini_magick', '4.2.7'
+
 # AUTHENTICATION AND AUTHORIZATION
 gem 'devise', '3.5.3'
 

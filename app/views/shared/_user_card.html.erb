@@ -1,9 +1,8 @@
 <div class="profile-side">
-  <div class="avatar-box">
-    <div class="avatar-circle"></div>
-    <%= display_admin_cert(@user) %>
-  </div>
-</div><a href="#"><strong><%= @user.name %></strong></a>
+  <%= render 'shared/user_avatar' %>
+</div>
+
+<a href="#"><strong><%= @user.name %></strong></a>
 <%= is_admin @user %>
 <div>Desde: <%= l @user.created_at, format: :short %></div>
 
@@ -31,4 +30,16 @@
       <% end %>
     </li>
   </ul>
+<% end %>
+
+<%= content_for :bottom_js do %>
+  <script type="text/javascript">
+    $("#changeAvatar").click(function(){
+      $("#uploadAvatar").click();
+    });
+
+    $("#uploadAvatar").change(function(){
+      $("#change_photo_form").submit();
+    });
+  </script>
 <% end %>
