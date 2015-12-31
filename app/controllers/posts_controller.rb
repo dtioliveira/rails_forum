@@ -1,3 +1,4 @@
+# I'm pretty sure I'm a top-level class documentation comment
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
@@ -36,8 +37,13 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
-    params.require(:post).permit(:title_pt, :title_es, :text_pt, :text_es, :tags_pt, :tags_es)
+    params.require(:post).permit(
+      :title_pt, :title_es,
+      :text_pt, :text_es,
+      :tags_pt, :tags_es
+    )
   end
 
   def set_user

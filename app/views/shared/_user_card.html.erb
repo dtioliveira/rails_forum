@@ -4,7 +4,7 @@
 
 <b><%= link_to @user.name, profile_path(@user) %></b>
 
-<%= is_admin @user %>
+<%= admin? @user %>
 
 <div><%= t('user_card.since_by') %>: <%= @user.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
 

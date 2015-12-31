@@ -1,2 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class User
+  class RegistrationsController < Devise::RegistrationsController
+  end
 end

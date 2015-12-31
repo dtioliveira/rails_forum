@@ -1,3 +1,4 @@
+# I'm pretty sure I'm a top-level class documentation comment
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -11,6 +12,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text, :commentable_id, :commentable_type)
   end

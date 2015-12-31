@@ -1,3 +1,4 @@
+# I'm pretty sure I'm a top-level class documentation comment
 class PagesController < ApplicationController
   before_action :authenticate_user!
 
@@ -10,7 +11,7 @@ class PagesController < ApplicationController
   def profile
     @user = User.friendly.find(params[:user_id])
     @posts = @user.posts
-    @relationship = @user.has_relationship?(current_user).first
+    @relationship = @user.relationship?(current_user).first
   end
 
   def videos

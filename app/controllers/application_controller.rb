@@ -1,5 +1,6 @@
-require "application_responder"
+require 'application_responder'
 
+# I'm pretty sure I'm a top-level class documentation comment
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
@@ -22,10 +23,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(
-      :name, :email, :password, :password_confirmation,
-    )}
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:name, :email, :password, :password_confirmation)
+    end
   end
 
   def after_sign_in_path_for(resource)

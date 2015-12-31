@@ -35,7 +35,8 @@ gem 'devise', '3.5.3'
 
 group :development do
   gem 'quiet_assets', '1.1.0'
-  gem 'brakeman', :require => false
+  gem 'rubocop', require: false
+  gem 'brakeman', require: false
 end
 
 gem 'rails_12factor', group: :production

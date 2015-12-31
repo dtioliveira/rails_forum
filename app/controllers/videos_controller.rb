@@ -1,3 +1,4 @@
+# I'm pretty sure I'm a top-level class documentation comment
 class VideosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
@@ -36,8 +37,11 @@ class VideosController < ApplicationController
   end
 
   private
+
   def video_params
-    params.require(:video).permit(:url, :title_pt, :title_es, :tags_pt, :tags_es)
+    params.require(:video).permit(
+      :url, :title_pt, :title_es, :tags_pt, :tags_es
+    )
   end
 
   def set_user
