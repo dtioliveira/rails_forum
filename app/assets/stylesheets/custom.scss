@@ -400,6 +400,38 @@ a {
   background-color: #f8f8f8;
 }
 
+.language-flag {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  opacity: 0.3;
+}
+
+.language-flag.br {
+  background-image: image-url('Brazil.png');
+  background-position: 50% 50%;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+.language-flag.es {
+  background-image: image-url('Spain.png');
+  background-position: 50% 50%;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+.language-flag.active {
+  opacity: 1;
+}
+
+.language-flag.active.es {
+  background-image: image-url('Spain.png');
+  background-position: 50% 50%;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
 @media (max-width: 991px) {
   .btn-danger.btn-sm {
     display: inline-block;
