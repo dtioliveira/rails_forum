@@ -2,7 +2,8 @@ class CreateVideos < ActiveRecord::Migration
   def change
     create_table :videos do |t|
       t.string :url
-      t.string :title
+      t.string :title_pt
+      t.string :title_es
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
