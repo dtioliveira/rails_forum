@@ -1,4 +1,4 @@
 <div class="pull-right">
-  <a href="#" class="w-inline-block language-flag br"></a>
-  <a href="#" class="w-inline-block language-flag es active"></a>
+  <%= link_to "", set_language_portuguese_path, class: "w-inline-block language-flag br #{ 'active' if I18n.locale == 'pt-BR'.to_sym }" %>
+  <%= link_to "", set_language_spanish_path, class: "w-inline-block language-flag es #{ 'active' if I18n.locale == :es }" %>
 </div>
