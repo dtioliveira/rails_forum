@@ -8,11 +8,12 @@
         data: { disable_with: 'Enviando...' },
         style: 'margin-top: 10px;' %>
       <% end %>
-      <!-- <%# link_to "Banir usuário", "#", class: 'w-button ban-user' %> -->
+      <a href="#" class="w-button ban-user">Banir usuário</a><a href="#" class="w-button became-admin">Tornar admin</a>
     </div>
   <% else %>
     <% unless @relationship.situation_pending? %>
-      <b><%= link_to "Desfazer amizade", destroy_relationship_path(user_id: @user.id), class: 'unfriend-link', method: :post, remote: true %></zb>
+      <b><%= link_to "Desfazer amizade", destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
+          class: 'unfriend-link', data: { disable_with: 'Cancelando...' }%></b>
     <% else %>
       <div class="center">
         <%= link_to "Aguardando aceitação...", "#", class: 'w-button add-friend' %>
