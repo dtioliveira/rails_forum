@@ -2,7 +2,8 @@
   <%= render 'shared/user_avatar' %>
 </div>
 
-<a href="#"><strong><%= @user.name %></strong></a>
+<b><%= link_to @user.name, profile_path(@user) %></b>
+
 <%= is_admin @user %>
 <div>Desde: <%= l @user.created_at, format: :short %></div>
 

@@ -14,8 +14,12 @@ class PagesController < ApplicationController
   end
 
   def videos
+    @user = current_user
+    @videos = Video.all
   end
 
   def posts
+    @user = current_user
+    @posts = Post.all
   end
 end

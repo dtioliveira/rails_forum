@@ -4,9 +4,9 @@
       <%= file_field_tag :avatar, accept: 'image/png ,image/jpeg, image/jpg', style: 'display: none;', id: 'uploadAvatar' %>
     <% end %>
 
-    <div class="avatar-circle" style="background-image: url(<%= @user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)"></div>
+    <div class="avatar-circle no-bg" style="background-image: url(<%= @user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)"></div>
 
     <%= display_admin_cert(@user) %>
   </div>
-  <a href="#" id="changeAvatar" class="change-avatar"><strong data-new-link="true">Trocar meu avatar</strong></a>
+  <b><%=  link_to "Trocar meu avatar", "#", id: "changeAvatar", class: 'change-avatar' if @user == current_user %></b>
 </div>

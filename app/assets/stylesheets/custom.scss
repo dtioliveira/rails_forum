@@ -15,6 +15,7 @@ h1 {
 }
 
 a {
+  color: #563d7c;
   text-decoration: none;
 }
 
@@ -136,6 +137,10 @@ a {
   margin-left: 0px;
 }
 
+.avatar-circle.sm:hover {
+  opacity: 0.63;
+}
+
 .num-counter {
   display: inline-block;
   margin-top: 10px;
@@ -165,8 +170,11 @@ a {
 }
 
 .ban-user {
-  background-color: #f2dede;
-  color: #a94442;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #c9302c;
+  color: white;
+  font-size: 12px;
 }
 
 .center {
@@ -179,6 +187,7 @@ a {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: #84922d;
   font-size: 38px;
 }
 
@@ -210,8 +219,21 @@ a {
   text-align: center;
 }
 
+.user-li.friends-list {
+  height: 120px;
+  margin-bottom: 10px;
+}
+
 .user-name {
   display: block;
+  color: #84922d;
+}
+
+.user-name.frienshiplist {
+  position: absolute;
+  left: 10%;
+  top: 90px;
+  right: 10%;
 }
 
 .btn-danger {
@@ -247,6 +269,10 @@ a {
   background-position: 50% 50%;
   background-size: 30px;
   background-repeat: no-repeat;
+}
+
+.menu-list {
+  color: #84922d;
 }
 
 .menu-list.active {
@@ -316,6 +342,62 @@ a {
   color: white;
   font-size: 12px;
   text-shadow: black 2px 2px 6px;
+}
+
+.became-admin {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #dbdbdb;
+  color: #333;
+  font-size: 12px;
+}
+
+.highlight-title {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 4px solid #cdbfe3;
+  border-bottom: 4px solid #cdbfe3;
+  color: #563d7c;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.friendship-option {
+  position: relative;
+  top: 30px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: #5a5a5a 0px 0px 6px 0px;
+}
+
+.friendship-option.left {
+  left: -30px;
+  background-image: image-url('forbidden15.png');
+  background-position: 50% 50%;
+  background-size: 13px;
+  background-repeat: no-repeat;
+}
+
+.friendship-option.left:hover {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.friendship-option.right {
+  left: 30px;
+  top: 30px;
+  background-image: image-url('checked21.png');
+  background-position: 50% 50%;
+  background-size: 14px;
+  background-repeat: no-repeat;
+}
+
+.friendship-option.right:hover {
+  background-color: #f8f8f8;
 }
 
 @media (max-width: 991px) {

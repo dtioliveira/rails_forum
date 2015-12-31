@@ -6,8 +6,7 @@
       </div>
     </div>
     <div class="w-col w-col-10">
-      <div><strong data-new-link="true"><%= comment.user.name %></strong>
-      </div>
+      <div><b><%= link_to comment.user.name, profile_path(comment.user) %></b></div>
       <div><%= comment.text %></div>
     </div>
   </div>

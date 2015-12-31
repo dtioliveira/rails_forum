@@ -1,0 +1,7 @@
+<%= form_tag url, method: :post do %>
+<%= text_field_tag :term, params[:term], placeholder: "Busque pelo título ou tags", class: "w-input" %>
+
+  <div class="pull-right">
+    <%= submit_tag 'submit', class: 'w-button' %>
+  </div>
+<% end %>

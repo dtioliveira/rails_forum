@@ -7,14 +7,7 @@
       </div>
 
       <div class="w-col w-col-9">
-        <h1 class="highlight-title">PRINCIPAIS NOTÍCIAS</h1>
-        <%= render 'shared/search_form', url: all_posts_path %>
-
-        <% @posts.each do |post| %>
-          <%= render 'posts/post', post: post %>
-        <% end %>
-
-        <h1 class="highlight-title">PRINCIPAIS VÍDEOS</h1>
+        <h1 class="highlight-title">VÍDEOS</h1>
         <%= render 'shared/search_form', url: all_videos_path %>
 
         <% @videos.each do |video| %>
