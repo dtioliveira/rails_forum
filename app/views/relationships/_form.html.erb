@@ -3,22 +3,22 @@
     <div class="center">
       <%= simple_form_for :relationship, url: create_relationship_path, method: :post, remote: true do |f| %>
         <%= f.input :user_id, as: :hidden, input_html: { value: @user.id } %>
-        <%= f.submit "Adicionar como amigo",
+        <%= f.submit t('user_card.relationship.add_friend'),
         class: 'w-button add-friend',
-        data: { disable_with: 'Enviando...' },
+        data: { disable_with: t('default.sending') },
         style: 'margin-top: 10px;' %>
       <% end %>
-      <a href="#" class="w-button ban-user">Banir usuário</a><a href="#" class="w-button became-admin">Tornar admin</a>
+      <a href="#" class="w-button ban-user"><%= t('user_card.relationship.ban') %></a><a href="#" class="w-button became-admin"><%= t('user_card.relationship.became_admin') %></a>
     </div>
   <% else %>
     <% unless @relationship.situation_pending? %>
-      <b><%= link_to "Desfazer amizade", destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
+      <b><%= link_to t('user_card.relationship.unfriend'), destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
           class: 'unfriend-link', data: { disable_with: 'Cancelando...' }%></b>
     <% else %>
       <div class="center">
-        <%= link_to "Aguardando aceitação...", "#", class: 'w-button add-friend' %>
-        <%= link_to "Cancelar pedido", destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
-            data: { disable_with: 'Cancelando...' }%>
+        <%= link_to t('default.waiting_acceptation'), "#", class: 'w-button add-friend' %>
+        <%= link_to t('default.cancel_request'), destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
+            data: { disable_with: t('default.canceling') }%>
       </div>
     <% end %>
   <% end %>

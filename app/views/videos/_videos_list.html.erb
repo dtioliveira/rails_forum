@@ -7,10 +7,10 @@
             <div class="avatar-circle sm" style="background-image: url('http://img.youtube.com/vi/<%= video.parse_url %>/0.jpg')"></div>
             <b><%= link_to video.title, edit_video_path(video), class: 'user-name' %></b>
             <div class="center">
-              <%= link_to "Excluir", video_path(video),
+              <%= link_to t('default.delete'), video_path(video),
                   method: :delete, class: 'w-button btn-danger btn-sm',
                   style: 'width: 100px;',
-                  data: { disable_with: 'Aguarde...' }%>
+                  data: { disable_with: t('default.delete') }%>
             </div>
           </div>
         </div>

@@ -8,5 +8,5 @@
 
     <%= display_admin_cert(@user) %>
   </div>
-  <b><%=  link_to "Trocar meu avatar", "#", id: "changeAvatar", class: 'change-avatar' if @user == current_user %></b>
+  <b><%=  link_to t('user_card.change_avatar'), "#", id: "changeAvatar", class: 'change-avatar' if @user == current_user %></b>
 </div>

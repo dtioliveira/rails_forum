@@ -208,19 +208,37 @@ pt-BR:
       <<: *errors
   activerecord:
     models:
-      user: Usuário
+      video: Vídeo
+      post: Notícia
+      comment: Comentário
     attributes:
-      user:
-        name: Nome
+      video:
+        title_pt: Título em português
+        title_es: Título em espanhol
+        url: URL do youtube
+        tags_pt: Tags em português
+        tags_es: Tags em espanhol
+      post:
+        title_pt: Título em português
+        title_es: Título em espanhol
+        tags_pt: Tags em português
+        tags_es: Tags em espnhol
+        text_pt: Texto em português
+        text_es: Texto em espanhol
 
     errors:
       <<: *errors
 
   helpers:
     submit:
-      user:
+      video:
         create: 'Novo %{model}'
         update: 'Salvar'
+      post:
+        create: 'Nova %{model}'
+        update: 'Salvar'
+      comment:
+        create: 'Enviar %{model}'
 
   views:
     pagination:

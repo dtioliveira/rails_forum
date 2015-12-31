@@ -1,2 +1,2 @@
 <b><%= link_to video.title, video_path(video), class: 'post-title' %></b>
-<div class="post-date">De: <%= link_to video.user.name, profile_path(video.user) %>- <%= video.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
+<div class="post-date"><%= link_to video.user.name, profile_path(video.user) %>- <%= video.created_at.strftime("%d/%m/%Y - %H:%M") %></div>

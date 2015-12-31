@@ -1,0 +1,49 @@
+pt-BR:
+  default:
+    sending: Enviando...
+    waiting_acceptation: Aguardando aceitação...
+    wait: Aguarde...
+    cancel_request: Cancelar pedido
+    canceling: Cancelando...
+    rate_this_post: Avalie essa publicação
+    search: Buscar
+    delete: Excluir
+    post: Notícia
+    are_you_sure: Tem certeza?
+  nav:
+    home: Pagina inicial
+    friends: Amigos
+    panel: Painel
+    sign_in: Entrar
+    logout: Sair
+  user_card:
+    since_by: Desde
+    friends: Amigos
+    videos: Vídeos
+    posts: Notícias
+    users: Usuários
+    change_avatar: Trocar meu avatar
+    relationship:
+      add_friend: Adicionar como amigo
+      ban: Banir
+      became_admin: Tornar admin
+      unfriend: Desfazer amizade
+      revoke: Revogar permissão
+      active: Ativar
+  title:
+    featured_posts: Principais notícias
+    featured_videos: Principais vídeos
+    my_friends: Meus amigos
+    comments: Comentários
+
+  video:
+    new: Novo video
+    empty: Não há videos no momento.
+
+  post:
+    new: Nova notícia
+    empty: Não há notícias no momento.
+
+  helper:
+    placeholder:
+      tags: Busque pelo título ou tags

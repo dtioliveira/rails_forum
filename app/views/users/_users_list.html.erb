@@ -9,20 +9,21 @@
             <div><%= user.email %></div>
             <div>Admin: <%= user.is_admin ? "Sim" : "Não" %></div>
             <div class="center">
-              <%= link_to "Banir", ban_user_path(user_id: user.id),
+              <%= link_to t('user_card.relationship.ban'), ban_user_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-danger btn-sm',
                   style: 'width: 100px;',
-                  data: { disable_with: 'Aguarde...' } if !user.status_banned? && !user.is_admin %>
-              <%= link_to "Ativar", ban_user_path(user_id: user.id),
+                  data: { disable_with: t('default.wait') } if !user.status_banned? && !user.is_admin %>
+              <%= link_to t('user_card.relationship.active'), ban_user_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-success btn-sm',
                   style: 'width: 100px;',
-                  data: { disable_with: 'Aguarde...' } if user.status_banned? %>
-              <%= link_to "Tornar Admin", became_admin_path(user_id: user.id),
+                  data: { disable_with: t('default.wait') } if user.status_banned? %>
+              <%= link_to t('user_card.relationship.became_admin'), became_admin_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-success btn-sm',
-                  data: { disable_with: 'Aguarde...' } if !user.is_admin && user.status_active? %>
-              <%= link_to "Revogar permissão", became_admin_path(user_id: user.id),
+                  style: 'margin-left: -5px;',
+                  data: { disable_with: t('default.wait') } if !user.is_admin && user.status_active? %>
+              <%= link_to t('user_card.relationship.revoke'), became_admin_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-success btn-sm',
-                  data: { disable_with: 'Aguarde...' } if user.is_admin %>
+                  data: { disable_with: t('default.wait') } if user.is_admin %>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
 
 <%= is_admin @user %>
 
-<div>Desde: <%= l @user.created_at, format: :short %></div>
+<div><%= t('user_card.since_by') %>: <%= @user.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
 
 <%= render 'shared/user_counters' %>
 
@@ -16,18 +16,18 @@
   <ul class="w-list-unstyled">
     <li class="side-menu-link users">
       <%= link_to users_path, class: 'w-inline-block menu-list' do %>
-        <div class="side-menu-text"><strong>usuários</strong></div>
+        <div class="side-menu-text"><strong><%= t('user_card.users') %></strong></div>
       <% end %>
     </li>
     <li class="side-menu-link">
       <%= link_to videos_path, class: 'w-inline-block menu-list' do %>
-        <div class="side-menu-text"><strong>Vídeos</strong>
+        <div class="side-menu-text"><strong><%= t('user_card.videos') %></strong>
         </div>
       <% end %>
     </li>
     <li class="side-menu-link news">
       <%= link_to posts_path, class: 'w-inline-block menu-list' do %>
-        <div class="side-menu-text"><strong>notícias</strong>
+        <div class="side-menu-text"><strong><%= t('user_card.posts') %></strong>
         </div>
       <% end %>
     </li>

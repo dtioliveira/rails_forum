@@ -1,0 +1,26 @@
+es:
+  default:
+    sending: Enviando...
+    waiting_acceptation: Aguardando aceitação...
+    wait: Aguarde...
+    cancel_request: Cancelar pedido
+    canceling: Cancelando...
+    rate_this_post: Avalie essa publicação
+    search: Buscar
+    delete: Excluir
+    post: Notícia
+    are_you_sure: Tem?
+  user_card:
+    since_by: Desde
+    friends: Amigos
+    videos: Vídeos
+    posts: Notícias
+    users: Usuários
+    relationship:
+      add_friend: Adicionar como amigo
+      ban: Banir
+      became_admin: Tornar admin
+      unfriend: Desfazer amizade
+  title:
+    featured_posts: Principais notícias
+    featured_videos: Principais vídeos

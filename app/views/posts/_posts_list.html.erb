@@ -7,10 +7,10 @@
             <div class="avatar-circle sm"></div>
             <b><%= link_to post.title, edit_post_path(post), class: 'user-name' %></b>
             <div class="center">
-              <%= link_to "Excluir", post_path(post),
+              <%= link_to t('default.delete'), post_path(post),
                   method: :delete, class: 'w-button btn-danger btn-sm',
                   style: 'width: 100px;',
-                  data: { disable_with: 'Aguarde...' }%>
+                  data: { disable_with: t('default.wait') }%>
             </div>
           </div>
         </div>

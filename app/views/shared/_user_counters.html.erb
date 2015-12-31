@@ -2,15 +2,15 @@
   <ul class="w-list-unstyled count-ul">
     <li class="count-list">
       <h3 class="num-counter"><%= @user.friends.count %></h3>
-      <div>Amigos</div>
+      <div><%= t('user_card.friends') %></div>
     </li>
     <li class="count-list">
       <h3 class="num-counter"><%= @user.videos.count %></h3>
-      <div>Vídeos</div>
+      <div><%= t('user_card.videos') %></div>
     </li>
     <li class="count-list">
       <h3 class="num-counter"><%= @user.posts.count %></h3>
-      <div>Posts</div>
+      <div><%= t('user_card.posts') %></div>
     </li>
   </ul>
 </div>

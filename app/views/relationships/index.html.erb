@@ -1,4 +1,4 @@
-<h1 class="highlight-title">Meus amigos</h1>
+<h1 class="highlight-title"><%= t('title.my_friends') %></h1>
 <% if @relationships.any? %>
   <% @relationships.each_slice(4).each do |relationships| %>
     <div class="w-row">
