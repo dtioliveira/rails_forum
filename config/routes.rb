@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'
+    registrations: 'user/registrations',
+    sessions: 'user/sessions'
   }
 
   # AREA DE ADMINS

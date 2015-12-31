@@ -1,1 +1,63 @@
 es:
+  "true": Sí
+  "false": No
+  default:
+    sending: Envío ...
+    waiting_acceptation: Esperando la aceptación ...
+    wait: Espere ...
+    cancel_request: Cancelar solicitud
+    canceling: Cancelación ...
+    rate_this_post: Califica esta publicación
+    search: Busque
+    delete: Borrar
+    post: Noticia
+    are_you_sure: ¿Está seguro?
+    enter: Ingrese
+  nav:
+    home: Principio
+    friends: Amigos
+    panel: Panel
+    sign_in: Inicia sesión
+    logout: Cerrar la sesión
+  user_card:
+    since_by: Desde
+    friends: Amigos
+    videos: Videos
+    posts: Noticias
+    users: Usuarios
+    change_avatar: Cambiar mi avatar
+    relationship:
+      add_friend: Añadir como amigo
+      ban: Desterrar
+      became_admin: Hacer admin
+      unfriend: Deshacer la amistad
+      revoke: Revocar el permiso
+      active: Activar
+  title:
+    featured_posts: Noticias principales
+    featured_videos: Principal videos
+    posts: Noticias
+    videos: Videos
+    my_friends: Mis amigos
+    comments: Comentarios
+    sign_in_or_register: Iniciar sesión o registrarse
+
+  video:
+    new: Nuevo video
+    empty: No hay vídeos en el momento.
+
+  post:
+    new: Nuevas noticias
+    empty: Sin noticias de momento.
+
+  helper:
+    placeholder:
+      tags: Búsqueda por título o etiquetas
+      email: ¿Cuál es tu email?
+      name: ¿Cómo te llamas?
+      new_password: Escriba su contraseña
+      password: Escriba una contraseña
+      password_confirmation: Confirme la contraseña
+      title_pt: Título en Portugués
+      title_es: Título en inglés
+      video_url: URL del video
