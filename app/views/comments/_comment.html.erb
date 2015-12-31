@@ -11,6 +11,6 @@
     </div>
   </div>
   <div class="moderation-box">
-    <%= link_to "Excluir esse comentário", comment_path(comment), method: :delete, remote: true if current_user.is_admin %>
+    <%= link_to "Excluir esse comentário", comment_path(comment), data: { confirm: 'Tem certeza?' }, method: :delete, remote: true if current_user.is_admin %>
   </div>
 </div>
