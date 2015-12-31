@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -35,4 +34,7 @@ Rails.application.routes.draw do
   post '/became_admin', to: 'users#became_admin', as: :became_admin
 
   post '/change_photo', to: 'users#change_photo', as: :change_photo
+
+  get 'set_language/portuguese'
+  get 'set_language/spanish'
 end
