@@ -1,4 +1,6 @@
 pt-BR:
+  "true": Sim
+  "false": Não
   default:
     sending: Enviando...
     waiting_acceptation: Aguardando aceitação...
@@ -10,6 +12,7 @@ pt-BR:
     delete: Excluir
     post: Notícia
     are_you_sure: Tem certeza?
+    enter: Entrar
   nav:
     home: Pagina inicial
     friends: Amigos
@@ -35,6 +38,7 @@ pt-BR:
     featured_videos: Principais vídeos
     my_friends: Meus amigos
     comments: Comentários
+    sign_in_or_register: Faça o login ou cadastre-se
 
   video:
     new: Novo video
@@ -47,3 +51,11 @@ pt-BR:
   helper:
     placeholder:
       tags: Busque pelo título ou tags
+      email: Qual é seu e-mail?
+      name: Qual é seu nome?
+      new_password: Digite sua senha
+      password: Digite uma senha
+      password_confirmation: Confirme a senha
+      title_pt: Título em português
+      title_es: Título em inglês
+      video_url: URL do vídeo

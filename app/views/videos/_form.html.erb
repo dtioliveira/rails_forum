@@ -3,9 +3,9 @@
 
     <%= render 'layouts/error_box', resource: @video %>
 
-    <%= f.input :title_pt, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
-    <%= f.input :title_es, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
-    <%= f.input :url, placeholder: 'URL do vídeo', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_pt, placeholder: t('helper.placeholder.title_pt'), input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_es, placeholder: t('helper.placeholder.title_es'), input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :url, placeholder: t('helper.placeholder.video_url'), input_html: { class: 'w-input input-rounded' } %>
 
     <hr>
     <%= f.input :tags_pt, input_html: { class: 'w-input input-rounded tags' } %>

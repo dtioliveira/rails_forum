@@ -1,13 +1,13 @@
-<h1 class="page-header">Faça o login ou cadastre-se</h1>
+<h1 class="page-header"><%= t('title.sign_in_or_register') %></h1>
 <div class="w-row">
   <div class="w-col w-col-5">
     <div class="w-form">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.input :email, placeholder: 'Seu email', input_html: { class: 'w-input input-rounded' } %>
-        <%= f.input :password, placeholder: 'Sua senha', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :email, placeholder: t('helper.placeholder.email'), input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :password, placeholder: t('helper.placeholder.new_password'), input_html: { class: 'w-input input-rounded' } %>
 
         <div class="pull-right">
-          <input type="submit" value="Entrar" data-wait="Please wait..." class="w-button">
+          <%= f.submit t('default.enter'), class: 'w-button', data: { disable_with: t('default.wait') } %>
         </div>
       <% end %>
     </div>
@@ -21,13 +21,13 @@
 
         <%= render 'layouts/error_box', resource: resource %>
 
-        <%= f.input :name, placeholder: 'Qual é seu nome?', input_html: { class: 'w-input input-rounded' } %>
-        <%= f.input :email, placeholder: 'Qual é seu e-mail?', input_html: { class: 'w-input input-rounded' } %>
-        <%= f.input :password, placeholder: 'Digite uma senha', input_html: { class: 'w-input input-rounded' } %>
-        <%= f.input :password_confirmation, placeholder: 'Confirme sua senha', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :name, placeholder: t('helper.placeholder.name'), input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :email, placeholder: t('helper.placeholder.email'), input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :password, placeholder: t('helper.placeholder.password'), input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :password_confirmation, placeholder: t('helper.placeholder.password_confirmation'), input_html: { class: 'w-input input-rounded' } %>
 
         <div class="pull-right">
-          <input type="submit" value="Registrar" data-wait="Registrar" wait="Registrar" class="w-button">
+          <%= f.button :submit, class: 'w-button', data: { disable_with: t('default.wait') } %>
         </div>
       <% end %>
     </div>

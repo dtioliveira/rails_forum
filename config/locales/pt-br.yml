@@ -208,10 +208,15 @@ pt-BR:
       <<: *errors
   activerecord:
     models:
+      user: Usuário
       video: Vídeo
       post: Notícia
       comment: Comentário
     attributes:
+      user:
+        name: Nome
+        password: Senha
+        password_confirmation: Confirmação da senha
       video:
         title_pt: Título em português
         title_es: Título em espanhol
@@ -231,6 +236,8 @@ pt-BR:
 
   helpers:
     submit:
+      user:
+        create: 'Registrar-me'
       video:
         create: 'Novo %{model}'
         update: 'Salvar'

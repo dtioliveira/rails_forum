@@ -7,7 +7,7 @@
             <div class="avatar-circle sm" style="background-image: url(<%= user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)"></div>
             <b><%= link_to user.name, profile_path(user.id), class: 'user-name' %></b>
             <div><%= user.email %></div>
-            <div>Admin: <%= user.is_admin ? true : false %></div>
+            <div>Admin: <%= user.is_admin ? t('true') : t('false') %></div>
             <div class="center">
               <%= link_to t('user_card.relationship.ban'), ban_user_path(user_id: user.id),
                   method: :post, remote: true, class: 'w-button btn-danger btn-sm',

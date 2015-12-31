@@ -3,14 +3,14 @@
 
     <%= render 'layouts/error_box', resource: @post %>
 
-    <%= f.input :title_pt, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_pt, placeholder: t('helper.placeholder.title_pt'), input_html: { class: 'w-input input-rounded' } %>
 
-    <%= f.input :title_es, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_es, placeholder: t('helper.placeholder.title_es'), input_html: { class: 'w-input input-rounded' } %>
 
-    <%= f.input :text_pt, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
+    <%= f.input :text_pt, input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
     <hr>
-    <%= f.input :text_es, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
+    <%= f.input :text_es, input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
     <hr>
     <%= f.input :tags_pt, input_html: { style: 'margin-top: 15px;', class: 'w-input input-rounded tags' } %>
@@ -25,10 +25,11 @@
 </div>
 
 <script type="text/javascript">
+  <% tiny_locale = I18n.locale == :es ? 'es' : 'pt_BR' %>
   tinyMCE.init({
     selector: 'textarea.tinymce',
     menubar: false,
-    language: 'pt_BR',
+    language: '<%= tiny_locale %>',
     statusbar: false,
     content_style: "p {font-family: 'Bree Serif', sans-serif;}"
   });
