@@ -1,13 +1,19 @@
-<h1 class="highlight-title"><%= t('title.featured_posts') %></h1>
-<%= render 'shared/search_form', url: all_posts_path %>
-
-<% @posts.each do |post| %>
-  <%= render 'posts/post', post: post %>
+<% if @posts.any? %>
+  <h1 class="highlight-title"><%= t('title.featured_posts') %></h1>
+  <%= render 'shared/search_form', url: all_posts_path %>
+  <% @posts.each do |post| %>
+    <%= render 'posts/post', post: post %>
+  <% end %>
+<% else %>
+  <div class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty') %></div>
 <% end %>
 
-<h1 class="highlight-title"><%= t('title.featured_videos') %></h1>
-<%= render 'shared/search_form', url: all_videos_path %>
-
-<% @videos.each do |video| %>
-  <%= render 'videos/video', video: video %>
+<% if @videos.any? %>
+  <h1 class="highlight-title"><%= t('title.featured_videos') %></h1>
+  <%= render 'shared/search_form', url: all_videos_path %>
+  <% @videos.each do |video| %>
+    <%= render 'videos/video', video: video %>
+  <% end %>
+<% else %>
+  <div class="alert alert-info"><strong><%= t('default.video') %></strong>: <%= t('video.empty') %></div>
 <% end %>

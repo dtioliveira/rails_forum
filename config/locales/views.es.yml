@@ -1,6 +1,8 @@
 es:
   "true": Sí
   "false": No
+  warning: Atención
+  some_errors_are_preventing_the_advance_of_this_process: Algunos errores impiden el avance de este proceso
   default:
     sending: Envío ...
     waiting_acceptation: Esperando la aceptación ...
@@ -13,6 +15,7 @@ es:
     post: Noticia
     are_you_sure: ¿Está seguro?
     enter: Ingrese
+    users: Usuarios
   nav:
     home: Principio
     friends: Amigos
@@ -49,6 +52,12 @@ es:
   post:
     new: Nuevas noticias
     empty: Sin noticias de momento.
+
+  relationship:
+    empty: No tienes amigos.
+
+  users:
+    empty: No hay ningún usuario a moderada.
 
   helper:
     placeholder:

@@ -18,5 +18,5 @@
     </div>
   <% end %>
 <% else %>
-  <div class="alert alert-info"><strong><%= current_user.name %>: </strong>Você ainda não possui amigos.</div>
+  <div class="alert alert-info"><strong><%= current_user.name %>: </strong><%= t('relationship.empty') %></div>
 <% end %>

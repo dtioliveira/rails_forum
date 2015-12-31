@@ -2,5 +2,5 @@
   <%= render 'users_list' %>
 <% else %>
   <div class="alert alert-info">
-    <strong>Usuários: </strong>Não há usuários para moderar no momento.</div>
+    <strong><%= t('default.users') %>: </strong><%= t('users.empty') %></div>
 <% end %>

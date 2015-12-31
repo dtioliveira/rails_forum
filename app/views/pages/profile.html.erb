@@ -3,5 +3,5 @@
     <%= render 'posts/post', post: post %>
   <% end %>
 <% else %>
-  <div class="alert alert-info"><strong>Notícias: </strong>Não há notícias no momento.</div>
+  <div class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty') %></div>
 <% end %>

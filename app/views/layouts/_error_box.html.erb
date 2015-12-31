@@ -1,6 +1,6 @@
 <% if resource.errors.any? %>
   <div class="alert alert-fail">
-    <div><strong>Atenção!<br>Alguns erros estão impedindo o avanço desse processo:<br></strong>
+    <div><strong><%= t('warning') %>!<br><%= t('some_errors_are_preventing_the_advance_of_this_process') %>:<br></strong>
     </div>
     <ul class="w-list-unstyled">
       <% resource.errors.full_messages.each do |msg| %>

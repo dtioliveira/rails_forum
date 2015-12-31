@@ -1,6 +1,8 @@
 pt-BR:
   "true": Sim
   "false": Não
+  warning: Atenção
+  some_errors_are_preventing_the_advance_of_this_process: Alguns erros estão impedindo o avanço desse processo
   default:
     sending: Enviando...
     waiting_acceptation: Aguardando aceitação...
@@ -13,6 +15,7 @@ pt-BR:
     post: Notícia
     are_you_sure: Tem certeza?
     enter: Entrar
+    users: Usuários
   nav:
     home: Pagina inicial
     friends: Amigos
@@ -49,6 +52,13 @@ pt-BR:
   post:
     new: Nova notícia
     empty: Não há notícias no momento.
+
+  relationship:
+    empty: Você ainda não possui amigos.
+
+  users:
+    empty: Não há usuários para moderar.
+
 
   helper:
     placeholder:
