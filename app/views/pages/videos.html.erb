@@ -1,19 +1,6 @@
-<section>
-  <div class="w-container main">
-    <h1 class="page-header">Seja bem vindo <%= current_user.name %></h1>
-    <div class="w-row">
-      <div class="w-col w-col-3 w-clearfix">
-        <%= render 'shared/user_card', user: current_user %>
-      </div>
+<h1 class="highlight-title">VÍDEOS</h1>
+<%= render 'shared/search_form', url: all_videos_path %>
 
-      <div class="w-col w-col-9">
-        <h1 class="highlight-title">VÍDEOS</h1>
-        <%= render 'shared/search_form', url: all_videos_path %>
-
-        <% @videos.each do |video| %>
-          <%= render 'videos/video', video: video %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
+<% @videos.each do |video| %>
+  <%= render 'videos/video', video: video %>
+<% end %>

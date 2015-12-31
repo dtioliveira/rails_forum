@@ -22,6 +22,7 @@
       <ul class="w-list-unstyled nav-ul">
         <li class="nav-list"><b><%= link_to "Página Inicial", root_path, class: 'nav-link' %></b></li>
         <% if current_user %>
+          <li class="nav-list"><b><%= link_to "Amigos", relationships_path, class: 'nav-link' %></b></li>
           <% if current_user.is_admin %>
             <li class="nav-list"><b><%= link_to "Painel", users_path, class: 'nav-link' %></b></li>
           <% end %>
@@ -36,7 +37,23 @@
 
   <%= render 'shared/flash' %>
 
-  <%= yield %>
+  <section>
+    <div class="w-container main">
+      <%= render 'shared/language_options' %>
+      <div class="w-row">
+        <% if !devise_controller? %>
+          <div class="w-col w-col-3 w-clearfix">
+            <%= render 'shared/user_card'  %>
+          </div>
+          <div class="w-col w-col-9">
+            <%= yield %>
+          </div>
+        <% else %>
+          <%= yield %>
+        <% end %>
+      </div>
+    </div>
+  </section>
 
   <%= yield :bottom_js %>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->

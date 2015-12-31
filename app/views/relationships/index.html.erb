@@ -1,32 +1,23 @@
-<section>
-  <div class="w-container main">
-    <h1 class="page-header">Seja bem vindo <%= current_user.name %></h1>
+<h1 class="highlight-title">Meus amigos</h1>
+<% if @relationships.any? %>
+  <% @relationships.each_slice(4).each do |relationships| %>
     <div class="w-row">
-      <div class="w-col w-col-3 w-clearfix">
-        <%= render 'shared/user_card', user: current_user %>
-      </div>
-
-      <div class="w-col w-col-9">
-        <h1 class="highlight-title">Meus amigos</h1>
-        <% @relationships.each_slice(4).each do |relationships| %>
-          <div class="w-row">
-            <% relationships.each do |relationship| %>
-              <% user = relationship.displaying_for(current_user) %>
-              <div class="w-col w-col-3">
-                <div class="user-li friends-list">
-                  <div class="avatar-circle sm" style="background-image: url(<%= user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)">
-                    <% if relationship.situation_pending? && relationship.added_user != current_user %>
-                      <a href="#" class="w-inline-block friendship-option left"></a>
-                      <a href="#" class="w-inline-block friendship-option right"></a>
-                    <% end %>
-                  </div>
-                  <b><%= link_to user.name, profile_path(user), class: 'user-name frienshiplist' %></b>
-                </div>
-              </div>
-            <% end %>
+      <% relationships.each do |relationship| %>
+        <% user = relationship.displaying_for(current_user) %>
+        <div class="w-col w-col-3">
+          <div class="user-li friends-list">
+            <div class="avatar-circle sm" style="background-image: url(<%= user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)">
+              <% if relationship.situation_pending? && relationship.added_user != current_user %>
+                <a href="#" class="w-inline-block friendship-option left"></a>
+                <a href="#" class="w-inline-block friendship-option right"></a>
+              <% end %>
+            </div>
+            <b><%= link_to @user.name, profile_path(user), class: 'user-name frienshiplist' %></b>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
-  </div>
-</section>
+  <% end %>
+<% else %>
+  <div class="alert alert-info"><strong><%= current_user.name %>: </strong>Você ainda não possui amigos.</div>
+<% end %>

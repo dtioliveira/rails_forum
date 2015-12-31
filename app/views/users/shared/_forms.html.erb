@@ -1,37 +1,35 @@
-<div class="w-container main">
-  <h1 class="page-header">Faça o login ou cadastre-se</h1>
-  <div class="w-row">
-    <div class="w-col w-col-5">
-      <div class="w-form">
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.input :email, placeholder: 'Seu email', input_html: { class: 'w-input input-rounded' } %>
-          <%= f.input :password, placeholder: 'Sua senha', input_html: { class: 'w-input input-rounded' } %>
+<h1 class="page-header">Faça o login ou cadastre-se</h1>
+<div class="w-row">
+  <div class="w-col w-col-5">
+    <div class="w-form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.input :email, placeholder: 'Seu email', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :password, placeholder: 'Sua senha', input_html: { class: 'w-input input-rounded' } %>
 
-          <div class="pull-right">
-            <input type="submit" value="Entrar" data-wait="Please wait..." class="w-button">
-          </div>
-        <% end %>
-      </div>
+        <div class="pull-right">
+          <input type="submit" value="Entrar" data-wait="Please wait..." class="w-button">
+        </div>
+      <% end %>
     </div>
+  </div>
 
-    <div class="w-col w-col-1"></div>
+  <div class="w-col w-col-1"></div>
 
-    <div class="w-col w-col-6">
-      <div class="w-form">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="w-col w-col-6">
+    <div class="w-form">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <%= render 'layouts/error_box', resource: resource %>
+        <%= render 'layouts/error_box', resource: resource %>
 
-          <%= f.input :name, placeholder: 'Qual é seu nome?', input_html: { class: 'w-input input-rounded' } %>
-          <%= f.input :email, placeholder: 'Qual é seu e-mail?', input_html: { class: 'w-input input-rounded' } %>
-          <%= f.input :password, placeholder: 'Digite uma senha', input_html: { class: 'w-input input-rounded' } %>
-          <%= f.input :password_confirmation, placeholder: 'Confirme sua senha', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :name, placeholder: 'Qual é seu nome?', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :email, placeholder: 'Qual é seu e-mail?', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :password, placeholder: 'Digite uma senha', input_html: { class: 'w-input input-rounded' } %>
+        <%= f.input :password_confirmation, placeholder: 'Confirme sua senha', input_html: { class: 'w-input input-rounded' } %>
 
-          <div class="pull-right">
-            <input type="submit" value="Registrar" data-wait="Registrar" wait="Registrar" class="w-button">
-          </div>
-        <% end %>
-      </div>
+        <div class="pull-right">
+          <input type="submit" value="Registrar" data-wait="Registrar" wait="Registrar" class="w-button">
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

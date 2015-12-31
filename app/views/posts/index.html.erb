@@ -1,22 +1,8 @@
-<section>
-  <div class="w-container main">
-    <h1 class="page-header">Área do admin</h1>
-    <div class="w-row">
-      <div class="w-col w-col-3 w-clearfix">
-        <%= render 'shared/user_card' %>
-      </div>
-
-      <div class="w-col w-col-9">
-        <div class="pull-right" style="margin-bottom: 20px;">
-          <%= link_to "Nova notícia", new_post_path, class: 'w-button' %>
-        </div>
-        <% if @posts.any? %>
-          <%= render 'posts_list' %>
-        <% else %>
-          <div class="alert alert-info">
-            <strong>Notícia: </strong>Não há notícias no momento.</div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="pull-right" style="margin-bottom: 20px;">
+  <%= link_to "Nova notícia", new_post_path, class: 'w-button' %>
+</div>
+<% if @posts.any? %>
+  <%= render 'posts_list' %>
+<% else %>
+  <div class="alert alert-info"><strong>Notícia: </strong>Não há notícias no momento.</div>
+<% end %>

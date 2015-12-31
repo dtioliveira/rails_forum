@@ -1,19 +1,6 @@
-<section>
-  <div class="w-container main">
-    <h1 class="page-header">Área do admin</h1>
-    <div class="w-row">
-      <div class="w-col w-col-3 w-clearfix">
-        <%= render 'shared/user_card' %>
-      </div>
-
-      <div class="w-col w-col-9">
-        <% if @users.any? %>
-          <%= render 'users_list' %>
-        <% else %>
-          <div class="alert alert-info">
-            <strong>Usuários: </strong>Não há usuários para moderar no momento.</div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
+<% if @users.any? %>
+  <%= render 'users_list' %>
+<% else %>
+  <div class="alert alert-info">
+    <strong>Usuários: </strong>Não há usuários para moderar no momento.</div>
+<% end %>
