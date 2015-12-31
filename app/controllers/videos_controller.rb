@@ -19,7 +19,7 @@ class VideosController < ApplicationController
 
   def show
     @comment = current_user.comments.new
-    @comments = @video.comments.order(created_at: :desc)
+    @comments = @video.comments.by_locale(I18n.locale).order(created_at: :desc)
   end
 
   def edit
@@ -37,7 +37,7 @@ class VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:url, :title, :tags)
+    params.require(:video).permit(:url, :title_pt, :title_es, :tags_pt, :tags_es)
   end
 
   def set_user

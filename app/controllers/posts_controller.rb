@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = current_user.comments.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.by_locale(I18n.locale).order(created_at: :desc)
   end
 
   def edit
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :text, :tags)
+    params.require(:post).permit(:title_pt, :title_es, :text_pt, :text_es, :tags_pt, :tags_es)
   end
 
   def set_user

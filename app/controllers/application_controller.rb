@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :current_locale
+
+  def current_locale
+    case I18n.locale.to_s
+    when 'es'
+      'es'
+    when 'pt-BR'
+      'pt'
+    end
+  end
 
   private
   def configure_permitted_parameters

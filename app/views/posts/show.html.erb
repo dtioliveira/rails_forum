@@ -8,10 +8,10 @@
       <div class="w-col w-col-9">
 
         <div class="w-form">
-          <h1 class="post-title pull-right"><%= @post.title %></h1>
+          <h1 class="post-title pull-right"><%= @post.send("title_" + current_locale) %></h1>
           <div class="post-date pull-right">De: <%= link_to @post.user.name, profile_path(@post.user) %>- <%= @post.created_at.strftime("%d/%m/%Y - %H:%M") %></div>
           <div class="w-richtext">
-            <%= simple_format(@post.text) %>
+            <%= simple_format(@post.send("text_" + current_locale)) %>
           </div>
 
           <%= tag_list_from @post %>

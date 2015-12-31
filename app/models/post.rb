@@ -7,9 +7,15 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, as: :commentable
 
-  validates :title, :tags, :text, presence: true
+  validates :title_pt, :tags_pt, :text_pt,
+            :title_es, :tags_es, :text_es,
+             presence: true
 
-  def tag_list
-    tags.gsub(";","").split(",").reject{|t| t.blank?}
+  def title
+    I18n.locale == :'pt-BR' ? 'title_pt' : 'title_es'
+  end
+
+  def tag_list(locale)
+    send("tags_" + locale).gsub(";","").split(",").reject{|t| t.blank?}
   end
 end

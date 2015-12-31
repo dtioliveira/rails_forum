@@ -3,12 +3,14 @@
 
     <%= render 'layouts/error_box', resource: @video %>
 
-    <%= f.input :title, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_pt, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_es, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
     <%= f.input :url, placeholder: 'URL do vídeo', input_html: { class: 'w-input input-rounded' } %>
 
     <hr>
-    
-    <%= f.input :tags, input_html: { id: 'tags', class: 'w-input input-rounded' } %>
+    <%= f.input :tags_pt, input_html: { class: 'w-input input-rounded tags' } %>
+    <hr>
+    <%= f.input :tags_es, input_html: { class: 'w-input input-rounded tags' } %>
 
     <div class="pull-right" style="margin-top: 20px;">
       <%= f.button :submit, class: 'w-button', data: { disable_with: 'Salvando...' } %>
@@ -19,7 +21,7 @@
 
 <%= content_for :bottom_js do %>
   <script type="text/javascript">
-    $('#tags').tagsInput({
+    $('.tags').tagsInput({
       'height':'100px',
       'width':'100%',
       'interactive':true,

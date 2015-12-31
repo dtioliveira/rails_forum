@@ -3,13 +3,20 @@
 
     <%= render 'layouts/error_box', resource: @post %>
 
-    <%= f.input :title, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+    <%= f.input :title_pt, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
 
-    <%= f.input :text, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
+    <%= f.input :title_es, placeholder: 'Título da publicação', input_html: { class: 'w-input input-rounded' } %>
+
+    <%= f.input :text_pt, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
     <hr>
+    <%= f.input :text_es, placeholder: 'Conteúdo da notícia', input_html: { rows: 12, class: 'w-input input-rounded tinymce' } %>
 
-    <%= f.input :tags, input_html: { id: 'tags', style: 'margin-top: 15px;', class: 'w-input input-rounded' } %>
+    <hr>
+    <%= f.input :tags_pt, input_html: { style: 'margin-top: 15px;', class: 'w-input input-rounded tags' } %>
+
+    <hr>
+    <%= f.input :tags_es, input_html: { style: 'margin-top: 15px;', class: 'w-input input-rounded tags' } %>
 
     <div class="pull-right" style='margin-top: 20px;'>
       <%= f.button :submit, class: 'w-button', data: { disable_with: 'Salvando...' } %>
@@ -29,7 +36,7 @@
 
 <%= content_for :bottom_js do %>
   <script type="text/javascript">
-    $('#tags').tagsInput({
+    $('.tags').tagsInput({
       'height':'100px',
       'width':'100%',
       'interactive':true,

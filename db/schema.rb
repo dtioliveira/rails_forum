@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151229130034) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",             limit: 65535
+    t.string   "locale",           limit: 255
     t.integer  "user_id",          limit: 4
     t.integer  "commentable_id",   limit: 4
     t.string   "commentable_type", limit: 255
@@ -56,12 +57,15 @@ ActiveRecord::Schema.define(version: 20151229130034) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "text",       limit: 65535
+    t.string   "title_pt",   limit: 255
+    t.string   "title_es",   limit: 255
+    t.text     "text_pt",    limit: 65535
+    t.text     "text_es",    limit: 65535
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "tags",       limit: 255
+    t.string   "tags_pt",    limit: 255
+    t.string   "tags_es",    limit: 255
     t.string   "slug",       limit: 255
   end
 
@@ -127,11 +131,13 @@ ActiveRecord::Schema.define(version: 20151229130034) do
 
   create_table "videos", force: :cascade do |t|
     t.string   "url",        limit: 255
-    t.string   "title",      limit: 255
+    t.string   "title_pt",   limit: 255
+    t.string   "title_es",   limit: 255
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "tags",       limit: 255
+    t.string   "tags_pt",    limit: 255
+    t.string   "tags_es",    limit: 255
     t.string   "slug",       limit: 255
   end
 
