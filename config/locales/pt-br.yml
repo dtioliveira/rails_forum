@@ -232,7 +232,9 @@ pt-BR:
         text_es: Texto em espanhol
 
     errors:
-      <<: *errors
+      messages:
+        blank: não pode ficar em branco
+        invalid: não é válido
 
   helpers:
     submit:
