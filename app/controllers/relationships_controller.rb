@@ -12,6 +12,20 @@ class RelationshipsController < ApplicationController
     @relationship = @user.has_relationship?(current_user).first
   end
 
+  def accept
+    @user = current_user
+    @relationship = Relationship.find(params[:relationship_id])
+    @relationship.update(situation: 'accepted')
+    @relationships = Relationship.where('adder_id = :id OR added_id = :id', id: current_user.id)
+  end
+
+  def reject
+    @user = current_user
+    @relationship = Relationship.find(params[:relationship_id])
+    @relationship.destroy
+    @relationships = Relationship.where('adder_id = :id OR added_id = :id', id: current_user.id)
+  end
+
   def destroy
     @user = User.find(params[:user_id])
     Relationship.where(adder_id: [current_user.id, @user.id], added_id: [@user.id, current_user.id]).destroy_all

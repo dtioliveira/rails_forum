@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # AÇÕES ENTRE ADMIN/USUARIOS COM OUTROS USUARIOS
   resources :relationships, only: :index
+  post '/:relationship_id/accept', to: 'relationships#accept', as: :accept_relationship
+  post '/:relationship_id/reject', to: 'relationships#reject', as: :reject_relationship
   post '/add_friend', to: 'relationships#create', as: :create_relationship
   post '/remove_friend', to: 'relationships#destroy', as: :destroy_relationship
   post '/ban', to: 'users#ban', as: :ban_user

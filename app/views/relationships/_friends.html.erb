@@ -1,0 +1,22 @@
+<% if @relationships.any? %>
+  <% @relationships.each_slice(4).each do |relationships| %>
+    <div class="w-row">
+      <% relationships.each do |relationship| %>
+        <% user = relationship.displaying_for(current_user) %>
+        <div class="w-col w-col-3">
+          <div class="user-li friends-list">
+            <div class="avatar-circle sm" style="background-image: url(<%= user.avatar.url || 'assets/12247144_985681451493689_3460159843447436262_n.jpg' %>)">
+              <% if relationship.situation_pending? && relationship.added_user != current_user %>
+                <%= link_to '', destroy_relationship_path(relationship.id), method: :post, remote: true, class: 'w-inline-block friendship-option left'  %>
+                <%= link_to '', accept_relationship_path(relationship), method: :post, remote: true, class: 'w-inline-block friendship-option right'  %>
+              <% end %>
+            </div>
+            <b><%= link_to @user.name, profile_path(user), class: 'user-name frienshiplist' %></b>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="alert alert-info"><strong><%= current_user.name %>: </strong>Você ainda não possui amigos.</div>
+<% end %>
