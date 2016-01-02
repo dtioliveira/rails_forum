@@ -5,6 +5,8 @@
   <% @posts.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
+
+  <%= paginate @posts %>
 <% else %>
   <div style="margin-top: 20px;" class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty_with_term') %></div>
 <% end %>

@@ -19,6 +19,7 @@ es:
     users: Usuarios
     accept: Aceptar
     reject: Rechazar
+    see_all: Ver todos
   nav:
     home: Principio
     friends: Amigos

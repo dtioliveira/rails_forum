@@ -4,6 +4,9 @@
   <% @posts.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
+  <div class="pull-right">
+    <%= link_to t('default.see_all'), all_posts_path %>
+  </div>
 <% else %>
   <div class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty') %></div>
 <% end %>
@@ -14,6 +17,9 @@
   <% @videos.each do |video| %>
     <%= render 'videos/video', video: video %>
   <% end %>
+  <div class="pull-right">
+    <%= link_to t('default.see_all'), all_videos_path %>
+  </div>
 <% else %>
   <div class="alert alert-info"><strong><%= t('default.video') %></strong>: <%= t('video.empty') %></div>
 <% end %>

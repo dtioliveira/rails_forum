@@ -15,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
+gem 'kaminari'
 
 # PRODUCTIVITY
 gem 'simple_form', '3.2.0'

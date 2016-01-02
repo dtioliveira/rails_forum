@@ -1,8 +1,12 @@
 <div class="pull-right" style="margin-bottom: 20px;">
   <%= link_to t('post.new'), new_post_path, class: 'w-button' %>
 </div>
+
+<%= render 'shared/search_form', url: posts_path %>
+<hr>
 <% if @posts.any? %>
   <%= render 'posts_list' %>
+  <%= paginate @posts %>
 <% else %>
   <div class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty') %></div>
 <% end %>

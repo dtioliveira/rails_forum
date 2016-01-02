@@ -4,7 +4,6 @@
       <% posts.each do |post| %>
         <div class="w-col w-col-4 w-col-small-4">
           <div class="user-li">
-            <div class="avatar-circle sm"></div>
             <b><%= link_to post.send("title_#{current_locale}"), edit_post_path(post), class: 'user-name' %></b>
             <div class="center">
               <%= link_to t('default.delete'), post_path(post),

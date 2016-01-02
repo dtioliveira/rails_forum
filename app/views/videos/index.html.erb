@@ -1,8 +1,12 @@
 <div class="pull-right" style="margin-bottom: 20px;">
   <%= link_to t('video.new'), new_video_path, class: 'w-button' %>
 </div>
+
+<%= render 'shared/search_form', url: videos_path %>
+<hr>
 <% if @videos.any? %>
   <%= render 'videos_list' %>
+  <%= paginate @videos %>
 <% else %>
   <div class="alert alert-info">
     <strong>Videos: </strong><%= t('video.empty') %></div>

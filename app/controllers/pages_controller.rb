@@ -16,11 +16,11 @@ class PagesController < ApplicationController
 
   def videos
     @user = current_user
-    @videos = Video.search(params)
+    @videos = Video.search(params).page(params[:page]).per(10)
   end
 
   def posts
     @user = current_user
-    @posts = Post.search(params)
+    @posts = Post.search(params).page(params[:page]).per(10)
   end
 end

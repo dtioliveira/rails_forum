@@ -26,4 +26,11 @@ class Video < ActiveRecord::Base
   def tag_list(locale)
     send('tags_' + locale).delete(';').split(',').reject(&:blank?)
   end
+
+  def self.search(params)
+    videos = Video.order(created_at: :desc)
+    videos = videos.where('lower(title_pt) LIKE :term || lower(tags_pt) LIKE :term',
+            term: "%#{params[:term].downcase}%") if params[:term].present?
+    videos
+  end
 end

@@ -432,6 +432,18 @@ a {
   background-repeat: no-repeat;
 }
 
+.video-square {
+  width: 150px;
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
+  background-image: image-url('download.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media (max-width: 991px) {
   .btn-danger.btn-sm {
     display: inline-block;

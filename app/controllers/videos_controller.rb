@@ -6,7 +6,7 @@ class VideosController < ApplicationController
 
   def index
     @user = current_user
-    @videos = current_user.videos
+    @videos = current_user.videos.search(params).page(params[:page]).per(9).order(created_at: :desc)
   end
 
   def new
