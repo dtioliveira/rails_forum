@@ -69,6 +69,7 @@ pt-BR:
   helper:
     placeholder:
       tags: Busque pelo título ou tags
+      name_email: Busque por nome ou email
       email: Qual é seu e-mail?
       name: Qual é seu nome?
       new_password: Digite sua senha

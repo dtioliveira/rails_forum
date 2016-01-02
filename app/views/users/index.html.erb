@@ -1,5 +1,9 @@
+<%= render 'shared/search_form', url: users_path, placeholder: t('helper.placeholder.name_email') %>
+<hr>
+
 <% if @users.any? %>
   <%= render 'users_list' %>
+  <%= paginate @users %>
 <% else %>
   <div class="alert alert-info">
     <strong><%= t('default.users') %>: </strong><%= t('users.empty') %></div>

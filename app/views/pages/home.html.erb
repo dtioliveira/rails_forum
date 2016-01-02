@@ -1,6 +1,6 @@
 <% if @posts.any? %>
   <h1 class="highlight-title"><%= t('title.featured_posts') %></h1>
-  <%= render 'shared/search_form', url: all_posts_path %>
+  <%= render 'shared/search_form', url: all_posts_path, placeholder: t('helper.placeholder.tags') %>
   <% @posts.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
@@ -13,7 +13,7 @@
 
 <% if @videos.any? %>
   <h1 class="highlight-title"><%= t('title.featured_videos') %></h1>
-  <%= render 'shared/search_form', url: all_videos_path %>
+  <%= render 'shared/search_form', url: all_videos_path, placeholder: t('helper.placeholder.tags') %>
   <% @videos.each do |video| %>
     <%= render 'videos/video', video: video %>
   <% end %>

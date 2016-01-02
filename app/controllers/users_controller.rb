@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @users = User.all.reject { |u| u == current_user }
+    @users = User.search(params).page(params[:page]).per(9).order(created_at: :desc).reject { |u| u == current_user }
   end
 
   def ban

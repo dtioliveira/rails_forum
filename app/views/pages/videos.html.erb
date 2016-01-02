@@ -1,5 +1,5 @@
 <h1 class="highlight-title"><%= t('title.videos') %></h1>
-<%= render 'shared/search_form', url: all_videos_path %>
+<%= render 'shared/search_form', url: all_videos_path, placeholder: t('helper.placeholder.tags') %>
 
 <% if @videos.any? %>
   <% @videos.each do |video| %>

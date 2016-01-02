@@ -2,7 +2,7 @@
   <%= link_to t('post.new'), new_post_path, class: 'w-button' %>
 </div>
 
-<%= render 'shared/search_form', url: posts_path %>
+<%= render 'shared/search_form', url: posts_path, placeholder: t('helper.placeholder.tags') %>
 <hr>
 <% if @posts.any? %>
   <%= render 'posts_list' %>

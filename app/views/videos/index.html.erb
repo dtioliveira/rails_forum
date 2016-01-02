@@ -2,7 +2,7 @@
   <%= link_to t('video.new'), new_video_path, class: 'w-button' %>
 </div>
 
-<%= render 'shared/search_form', url: videos_path %>
+<%= render 'shared/search_form', url: videos_path, placeholder: t('helper.placeholder.tags') %>
 <hr>
 <% if @videos.any? %>
   <%= render 'videos_list' %>

@@ -34,4 +34,11 @@ class User < ActiveRecord::Base
   def active_for_authentication?
     super && self.status_active?
   end
+
+  def self.search(params)
+    users = User.order(created_at: :desc)
+    users = users.where('lower(name) LIKE :term || lower(email) LIKE :term',
+            term: "%#{params[:term].downcase}%") if params[:term].present?
+    users
+  end
 end

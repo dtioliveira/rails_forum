@@ -1,5 +1,5 @@
 <h1 class="highlight-title"><%= t('title.posts') %></h1>
-<%= render 'shared/search_form', url: all_posts_path %>
+<%= render 'shared/search_form', url: all_posts_path, placeholder: t('helper.placeholder.tags')%>
 
 <% if @posts.any? %>
   <% @posts.each do |post| %>
