@@ -16,11 +16,11 @@ class PagesController < ApplicationController
 
   def videos
     @user = current_user
-    @videos = Video.all
+    @videos = Video.search(params)
   end
 
   def posts
     @user = current_user
-    @posts = Post.all
+    @posts = Post.search(params)
   end
 end

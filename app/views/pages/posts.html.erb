@@ -1,6 +1,10 @@
 <h1 class="highlight-title"><%= t('title.posts') %></h1>
 <%= render 'shared/search_form', url: all_posts_path %>
 
-<% @posts.each do |post| %>
-  <%= render 'posts/post', post: post %>
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <%= render 'posts/post', post: post %>
+  <% end %>
+<% else %>
+  <div style="margin-top: 20px;" class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty_with_term') %></div>
 <% end %>

@@ -8,16 +8,22 @@
         data: { disable_with: t('default.sending') },
         style: 'margin-top: 10px;' %>
       <% end %>
-      <a href="#" class="w-button ban-user"><%= t('user_card.relationship.ban') %></a><a href="#" class="w-button became-admin"><%= t('user_card.relationship.became_admin') %></a>
+      <!-- <a href="#" class="w-button ban-user"><%= t('user_card.relationship.ban') %></a><a href="#" class="w-button became-admin"><%= t('user_card.relationship.became_admin') %></a> -->
     </div>
   <% else %>
-    <% unless @relationship.situation_pending? %>
+    <% if !@relationship.situation_pending? %>
       <b><%= link_to t('user_card.relationship.unfriend'), destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
           class: 'unfriend-link', data: { disable_with: 'Cancelando...' }%></b>
-    <% else %>
+    <% elsif @relationship.adder_user == current_user %>
       <div class="center">
         <%= link_to t('default.waiting_acceptation'), "#", class: 'w-button add-friend' %>
         <%= link_to t('default.cancel_request'), destroy_relationship_path(user_id: @user.id), method: :post, remote: true,
+            data: { disable_with: t('default.canceling') }%>
+      </div>
+    <% elsif @relationship.added_user == current_user %>
+      <div class="center">
+        <%= link_to t('default.accept'), accept_relationship_path(@relationship), method: :post, remote: true, class: 'w-button btn-success add-friend' %>
+        <%= link_to t('default.reject'), reject_relationship_path(@relationship), method: :post, remote: true,
             data: { disable_with: t('default.canceling') }%>
       </div>
     <% end %>

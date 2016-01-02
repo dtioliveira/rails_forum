@@ -1,6 +1,7 @@
 pt-BR:
-  "true": Sim
-  "false": Não
+  'back': << Voltar
+  'true': Sim
+  'false': Não
   warning: Atenção
   some_errors_are_preventing_the_advance_of_this_process: Alguns erros estão impedindo o avanço desse processo
   default:
@@ -16,6 +17,8 @@ pt-BR:
     are_you_sure: Tem certeza?
     enter: Entrar
     users: Usuários
+    accept: Aceitar
+    reject: Recusar
   nav:
     home: Pagina inicial
     friends: Amigos
@@ -48,10 +51,12 @@ pt-BR:
   video:
     new: Novo video
     empty: Não há videos no momento.
+    empty_with_term: Não há vídeos com o termo buscado.
 
   post:
     new: Nova notícia
     empty: Não há notícias no momento.
+    empty_with_term: Não há notícias com o termo buscado.
 
   relationship:
     empty: Você ainda não possui amigos.

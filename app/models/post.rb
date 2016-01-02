@@ -19,4 +19,11 @@ class Post < ActiveRecord::Base
   def tag_list(locale)
     send('tags_' + locale).delete(';').split(',').reject { :blank? }
   end
+
+  def self.search(params)
+    posts = Post.order(created_at: :desc)
+    posts = posts.where('lower(title_pt) LIKE :term || lower(tags_pt) LIKE :term',
+            term: "%#{params[:term].downcase}%") if params[:term].present?
+    posts
+  end
 end

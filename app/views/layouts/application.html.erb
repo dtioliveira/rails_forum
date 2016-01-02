@@ -23,9 +23,6 @@
         <li class="nav-list"><b><%= link_to t('nav.home'), root_path, class: 'nav-link' %></b></li>
         <% if current_user %>
           <li class="nav-list"><b><%= link_to t('nav.friends'), relationships_path, class: 'nav-link' %></b></li>
-          <% if current_user.is_admin %>
-            <li class="nav-list"><b><%= link_to t('nav.panel'), users_path, class: 'nav-link' %></b></li>
-          <% end %>
           <li class="nav-list"><b><%= link_to t('nav.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %></b></li>
         <% else %>
           <li class="nav-list"><b><%= link_to t('nav.sign_in'), new_user_session_path, class: 'nav-link' %></b></li>

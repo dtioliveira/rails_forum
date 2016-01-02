@@ -1,23 +1,10 @@
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: cursify
-  password: cursify@#!
-  socket: /var/run/mysqld/mysqld.sock
-
-development:
-  <<: *default
-  database: cursify_test_development
-
-test:
-  <<: *default
-  database: cursify_test_test
-#
 # default: &default
-#   adapter: postgresql
-#   encoding: unicode
+#   adapter: mysql2
+#   encoding: utf8
 #   pool: 5
+#   username: cursify
+#   password: cursify@#!
+#   socket: /var/run/mysqld/mysqld.sock
 #
 # development:
 #   <<: *default
@@ -26,3 +13,16 @@ test:
 # test:
 #   <<: *default
 #   database: cursify_test_test
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: cursify_test_development
+
+test:
+  <<: *default
+  database: cursify_test_test

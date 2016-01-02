@@ -1,6 +1,7 @@
 es:
-  "true": Sí
-  "false": No
+  'back': << Atrás
+  'true': Sí
+  'false': No
   warning: Atención
   some_errors_are_preventing_the_advance_of_this_process: Algunos errores impiden el avance de este proceso
   default:
@@ -16,6 +17,8 @@ es:
     are_you_sure: ¿Está seguro?
     enter: Ingrese
     users: Usuarios
+    accept: Aceptar
+    reject: Rechazar
   nav:
     home: Principio
     friends: Amigos
@@ -48,10 +51,12 @@ es:
   video:
     new: Nuevo video
     empty: No hay vídeos en el momento.
+    empty_with_term: Por desgracia hay no hay videos con el término buscado.
 
   post:
     new: Nuevas noticias
     empty: Sin noticias de momento.
+    empty_with_term: Ninguna palabra con el término buscado.
 
   relationship:
     empty: No tienes amigos.
