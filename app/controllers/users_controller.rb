@@ -1,6 +1,7 @@
 # I'm pretty sure I'm a top-level class documentation comment
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorized?, except: :change_photo
 
   def index
     @user = current_user
@@ -26,5 +27,14 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update(avatar: params[:avatar])
     redirect_to :back
+  end
+
+  private
+
+  def authorized?
+    if !current_user.is_admin
+      flash[:alert] = t("You are not authorized to perform this action")
+      redirect_to(request.referrer || root_path)
+    end
   end
 end
