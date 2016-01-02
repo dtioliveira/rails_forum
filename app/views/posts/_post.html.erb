@@ -1,2 +1,2 @@
-<b><%= link_to post.title, post_path(post), class: 'post-title' %></b>
+<b><%= link_to post.send("title_#{current_locale}"), post_path(post), class: 'post-title' %></b>
 <div class="post-date"><%= link_to post.user.name, profile_path(post.user) %>- <%= post.created_at.strftime("%d/%m/%Y - %H:%M") %></div>

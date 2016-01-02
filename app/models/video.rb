@@ -24,6 +24,6 @@ class Video < ActiveRecord::Base
   end
 
   def tag_list(locale)
-    send('tags_' + locale).delete(';').split(',').reject { :blank? }
+    send('tags_' + locale).delete(';').split(',').reject(&:blank?)
   end
 end

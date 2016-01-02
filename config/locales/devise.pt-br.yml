@@ -13,6 +13,7 @@ pt-BR:
     failure:
       already_authenticated: 'Você já está logado.'
       unauthenticated: 'Você precisa registrar-se ou fazer login para continuar.'
+      not_found_in_database: "%{authentication_keys} ou senha inválidos."
       unconfirmed: 'Você deve confirmar sua conta antes de continuar.'
       locked: 'Sua conta está bloqueada.'
       invalid: 'E-mail e senha inválidos'

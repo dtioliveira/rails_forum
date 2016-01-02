@@ -4,8 +4,8 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @posts = Post.all
-    @videos = Video.all
+    @posts = Post.last(5).reverse
+    @videos = Video.last(5).reverse
   end
 
   def profile
