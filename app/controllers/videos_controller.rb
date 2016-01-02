@@ -7,13 +7,16 @@ class VideosController < ApplicationController
   def index
     @user = current_user
     @videos = current_user.videos.search(params).page(params[:page]).per(9).order(created_at: :desc)
+    authorize Video.new
   end
 
   def new
     @video = current_user.videos.new
+    authorize @video
   end
 
   def create
+    authorize @video
     @video = current_user.videos.create(video_params)
     respond_with @video, location: -> { videos_url }
   end
@@ -24,14 +27,17 @@ class VideosController < ApplicationController
   end
 
   def edit
+    authorize @video
   end
 
   def update
+    authorize @video
     @video.update(video_params)
     respond_with @video, location: -> { videos_url }
   end
 
   def destroy
+    authorize @video
     @video.destroy
     respond_with @video, location: -> { videos_url }
   end

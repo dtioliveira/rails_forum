@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
+  include Pundit
+  protect_from_forgery
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
@@ -37,5 +42,10 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = session[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
+  end
+
+  def user_not_authorized
+    flash[:alert] = t("You are not authorized to perform this action")
+    redirect_to(request.referrer || root_path)
   end
 end

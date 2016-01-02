@@ -7,14 +7,17 @@ class PostsController < ApplicationController
   def index
     @user = current_user
     @posts = current_user.posts.search(params).page(params[:page]).per(9).order(created_at: :desc)
+    authorize Post.new
   end
 
   def new
     @post = current_user.posts.new
+    authorize @post
   end
 
   def create
     @post = current_user.posts.create(post_params)
+    authorize @post
     respond_with @post, location: -> { posts_url }
   end
 
@@ -24,14 +27,17 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
     @post.update(post_params)
     respond_with @post, location: -> { posts_url }
   end
 
   def destroy
+    authorize @post
     @post.destroy
     respond_with @post, location: -> { posts_url }
   end

@@ -33,6 +33,7 @@ gem 'mini_magick', '4.2.7'
 
 # AUTHENTICATION AND AUTHORIZATION
 gem 'devise', '3.5.3'
+gem 'pundit', '1.0'
 
 group :development do
   gem 'quiet_assets', '1.1.0'
