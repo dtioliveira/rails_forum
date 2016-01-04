@@ -1,6 +1,7 @@
 <div class="user-avatar">
   <div class="avatar-box">
     <%= form_tag change_photo_path, method: :post, remote: true, multipart: true, id: 'change_photo_form' do %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= file_field_tag :avatar, accept: 'image/png ,image/jpeg, image/jpg', style: 'display: none;', id: 'uploadAvatar' %>
     <% end %>
 
