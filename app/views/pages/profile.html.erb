@@ -1,7 +1,11 @@
+<%= render 'shared/search_form', url: profile_path(@user), placeholder: t('helper.placeholder.tags')%>
+
 <% if @posts.any? %>
   <% @posts.each do |post| %>
     <%= render 'posts/post', post: post %>
   <% end %>
+  
+  <%= paginate @posts %>
 <% else %>
   <div class="alert alert-info"><strong><%= t('default.post') %></strong>: <%= t('post.empty') %></div>
 <% end %>
