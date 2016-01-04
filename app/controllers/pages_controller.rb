@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.friendly.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.search(params).page(params[:page]).per(10)
     @relationship = @user.relationship?(current_user).first
   end
 
