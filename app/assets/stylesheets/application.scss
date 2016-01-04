@@ -27,3 +27,13 @@ hr{
   position: relative;
   font-size: 11px;
 }
+
+nav.pagination{
+  padding: 15px;
+  text-align: center;
+  span{
+    padding: 10px;
+    color: #84922d;
+    font-weight: bold;
+  }
+}
