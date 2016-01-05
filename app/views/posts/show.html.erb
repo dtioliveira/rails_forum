@@ -9,7 +9,7 @@
 
   <div class="rating-box">
     <div><%= t('default.rate_this_post') %></div>
-    <%= rating_for @post, "like", star: 5, enable_half: true, disable_after_rate: true, cancel: true %>
+    <%= rating_for @post, "like", star: 5, star_path: '/images', enable_half: true, disable_after_rate: true, cancel: true %>
   </div>
   <%= render 'comments/form' %>
 </div>
