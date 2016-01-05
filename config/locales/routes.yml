@@ -1,0 +1,28 @@
+es:
+  routes:
+    videos: videos
+    posts: noticias
+    new: nuevo
+    edit: editar
+    profile: perfil
+    home: principio
+    all_posts: las_noticias
+    all_videos: los_videos
+    users: usuarios
+    relationships: amigos
+    sign_in: entrar
+    sign_up: registro
+pt-BR:
+  routes:
+    videos: videos
+    posts: noticias
+    new: novo
+    edit: editar
+    profile: perfil
+    home: inicio
+    all_posts: todas_noticias
+    all_videos: todos_videos
+    users: usuarios
+    relationships: amigos
+    sign_in: entrar
+    sign_up: cadastro

@@ -36,6 +36,9 @@ gem 'mini_magick', '4.2.7'
 gem 'devise', '3.5.3'
 gem 'pundit', '1.0'
 
+# TRANSLATIONS
+gem 'route_translator'
+
 group :development, :test do
   gem 'byebug'
   gem 'quiet_assets', '1.1.0'
