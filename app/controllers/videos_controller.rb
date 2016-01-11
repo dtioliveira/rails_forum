@@ -16,8 +16,8 @@ class VideosController < ApplicationController
   end
 
   def create
-    authorize @video
     @video = current_user.videos.create(video_params)
+    authorize @video
     respond_with @video, location: -> { videos_url }
   end
 
